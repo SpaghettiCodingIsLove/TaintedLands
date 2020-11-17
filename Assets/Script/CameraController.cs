@@ -5,41 +5,32 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
-    private Transform target;
-
+    private float distanceAway;
     [SerializeField]
-    private Vector3 offsetPosition = new Vector3(-2.85f, 0.75f, 0.0f);
-
+    private float distanceUp;
     [SerializeField]
-    private Space offsetPositionSpace = Space.Self;
-
+    private float smooth;
     [SerializeField]
-    private bool lookAt = true;
+    private Transform follow;
+    private Vector3 targetPosition;
 
-    private void Update()
+    void Start()
     {
-        if(target == null)
-        {
-            Debug.LogWarning("Missing Target");
-            return;
-        }
-
-        if(offsetPositionSpace == Space.Self)
-        {
-            transform.position = target.TransformPoint(offsetPosition);
-        }
-        else
-        {
-            transform.position = target.position + offsetPosition;
-        }
-
-        if(lookAt)
-        {
-            transform.LookAt(target);
-        }    
-        else
-        {
-            transform.rotation = target.rotation;
-        }
+        follow = GameObject.FindWithTag("Player").transform;
     }
+
+    void Update()
+    {
+
+    }
+
+    void LateUpdate()
+    {
+        targetPosition = follow.position + follow.up * distanceUp - follow.forward * distanceAway;
+
+        transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * smooth);
+
+        transform.LookAt(follow);
+    }
+
 }
