@@ -14,8 +14,6 @@ public class PlayerControllerRigidBody : MonoBehaviour
 
     // units moved per second holding down move input
     public float moveRate = 10;
-   
-    
 
 
 
@@ -27,7 +25,7 @@ public class PlayerControllerRigidBody : MonoBehaviour
     }
 
     // Update is called once per frame
-    private void FixedUpdate()
+    private void Update()
     {
         float moveAxis = Input.GetAxis(MoveInputAxis);
         float turnAxis = Input.GetAxis(TurnInputAxis);
@@ -50,8 +48,13 @@ public class PlayerControllerRigidBody : MonoBehaviour
 
         // mention this trash function automatically converts to local space
         rb.AddForce(transform.forward * input * moveRate, ForceMode.Force);
-        
 
+        if (Input.GetKey(KeyCode.LeftShift))
+        {
+            
+            rb.AddForce(transform.forward * input * 2 * moveRate, ForceMode.Force);
+   
+        }
     }
 
     private void Turn(float input)
