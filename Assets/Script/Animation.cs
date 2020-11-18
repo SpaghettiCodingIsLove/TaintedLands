@@ -17,16 +17,15 @@ public class Animation : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             anim.Play("Walk");
+
+        }
+        else if (Input.GetKey(KeyCode.LeftShift))
+        {
+            anim.Play("Run");
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
             anim.Play("WalkBack");
-        }
-        else if (Input.GetKey(KeyCode.LeftShift))
-        {
-            
-            anim.Play("Run");
-            
         }
         else
         {
