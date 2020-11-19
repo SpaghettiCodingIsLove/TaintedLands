@@ -13894,17 +13894,17 @@ PrefabInstance:
     - target: {fileID: 257232879635504994, guid: bf31c4c413b05f14595506f445c5da17,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3059
+      value: 2744
       objectReference: {fileID: 0}
     - target: {fileID: 257232879635504994, guid: bf31c4c413b05f14595506f445c5da17,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 96.6705
+      value: 99.3
       objectReference: {fileID: 0}
     - target: {fileID: 257232879635504994, guid: bf31c4c413b05f14595506f445c5da17,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1068
+      value: 942.1
       objectReference: {fileID: 0}
     - target: {fileID: 257232879635504994, guid: bf31c4c413b05f14595506f445c5da17,
         type: 3}
@@ -13951,7 +13951,64 @@ PrefabInstance:
       propertyPath: m_Name
       value: Human Female (v4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 257232879635792642, guid: bf31c4c413b05f14595506f445c5da17,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 257232879643226548, guid: bf31c4c413b05f14595506f445c5da17,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 6cb72b869d2611f4bbfcc9b2b633979d, type: 2}
+    - target: {fileID: 257232879643226548, guid: bf31c4c413b05f14595506f445c5da17,
+        type: 3}
+      propertyPath: m_WarningMessage
+      value: "\nBinding warning: Some generic clip(s) animate transforms that are
+        already bound by a Humanoid avatar. These transforms can only be changed
+        by Humanoid clips.\n\tTransform 'EyeR'\n\tTransform 'EyeL'\n\tTransform 'EyeR'\n\tTransform
+        'EyeL'\n\tTransform 'EyeR'\n\tTransform 'EyeL'\n\tFrom animation clip 'Idle'\n\tFrom
+        animation clip 'Walk'\n\tFrom animation clip 'WalkBack'\n\tFrom animation
+        clip 'Run'\n\tFrom animation clip 'Idle_break'\n\tFrom animation clip 'RunningJump02'"
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105792999781864, guid: bf31c4c413b05f14595506f445c5da17,
+        type: 3}
+      propertyPath: moveRate
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105792999781865, guid: bf31c4c413b05f14595506f445c5da17,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105792999781866, guid: bf31c4c413b05f14595506f445c5da17,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105792999781866, guid: bf31c4c413b05f14595506f445c5da17,
+        type: 3}
+      propertyPath: m_Drag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105792999781867, guid: bf31c4c413b05f14595506f445c5da17,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105792999781876, guid: bf31c4c413b05f14595506f445c5da17,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 991105792999781877, guid: bf31c4c413b05f14595506f445c5da17,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 991105792999781865, guid: bf31c4c413b05f14595506f445c5da17, type: 3}
+    - {fileID: 991105792999781876, guid: bf31c4c413b05f14595506f445c5da17, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bf31c4c413b05f14595506f445c5da17, type: 3}
 --- !u!1 &1977618349
 GameObject:
@@ -14049,9 +14106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ea5f40620ceaf44a7eaeea50438d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceAway: -5
+  distanceAway: 5
   distanceUp: 2
-  smooth: -1
+  smooth: 3
   follow: {fileID: 1635262421}
 --- !u!1 &2029963359
 GameObject:
