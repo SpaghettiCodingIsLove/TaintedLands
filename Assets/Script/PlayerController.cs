@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-<<<<<<< HEAD
+
 
     private string MoveInputAxis = "Vertical";
     private string TurnInputAxis = "Horizontal";
@@ -105,18 +105,3 @@ public class PlayerController : MonoBehaviour
         transform.Rotate(0, input * rotationRate * Time.deltaTime, 0);
     }
 }
-=======
-    public float moveSpeed = 0.2f;
-    public float rotationSpeed = 2.5f;
-
-    public void FixedUpdate()
-    {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
-        Vector3 movement = new Vector3(vertical, 0.0f, 0);
-
-        transform.Translate(movement * moveSpeed);
-        transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y + horizontal * rotationSpeed, 0);
-    }
-}
->>>>>>> bf738b780c3600b8eec72ee1c6c84f702a7c0785
