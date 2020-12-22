@@ -20,7 +20,7 @@ public class PlayerStats : MonoBehaviour
     public Button buyArmour;
     #endregion
 
-    #region player stats
+    #region player stats variables
     public int Money = 100;
     public int Level = 1;
     public float CurrentHealth;
@@ -44,11 +44,11 @@ public class PlayerStats : MonoBehaviour
         {
             MaxHealth = MaxHealth * Level;
             CurrentHealth = MaxHealth;
-            healthBar.SetMaxHealth(MaxHealth);
         }
 
         potionsAmount.text = amountOfHealthPotion.ToString();
-        healthBar.SetMaxHealth(CurrentHealth);
+        healthBar.SetMaxHealth(MaxHealth);
+        healthBar.SetHealth(CurrentHealth);
         SetMoneyText();
         armourPriceText.text = armourPrice.ToString();
         moneyInShop.text = Money.ToString();
