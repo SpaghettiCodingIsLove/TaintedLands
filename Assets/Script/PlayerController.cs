@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     
 
     // rotation that occurs in angles per second holding down input
-    public float rotationRate = 150;
+    public float rotationRate = 360;
 
     // units moved per second holding down move input
     private CharacterController controller;
@@ -95,6 +95,8 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("spell1",false);
         }
+
+
 
     }
 
