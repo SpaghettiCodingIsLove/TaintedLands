@@ -21389,6 +21389,7 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 400
       objectReference: {fileID: 0}
+<<<<<<< Updated upstream
     - target: {fileID: 9115835943610240885, guid: 97878204633644688ffb5ce1b2632894,
         type: 3}
       propertyPath: m_LocalScale.z
@@ -21398,10 +21399,30 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 97878204633644688ffb5ce1b2632894, type: 3}
 --- !u!1 &1772622299
 GameObject:
+=======
+    m_RemovedComponents:
+    - {fileID: 8939074145106883300, guid: fd29e2d3f6e994629b646987c9d25c89, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: fd29e2d3f6e994629b646987c9d25c89, type: 3}
+--- !u!1 &535774757 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1031538201245074993, guid: fd29e2d3f6e994629b646987c9d25c89,
+    type: 3}
+  m_PrefabInstance: {fileID: 523335415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &535774763 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1031538201244916305, guid: fd29e2d3f6e994629b646987c9d25c89,
+    type: 3}
+  m_PrefabInstance: {fileID: 523335415}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &535774764
+MonoBehaviour:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1772622300}
@@ -21416,10 +21437,22 @@ GameObject:
   m_IsActive: 1
 --- !u!224 &1772622300
 RectTransform:
+=======
+  m_GameObject: {fileID: 535774757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e395fc0178224f841a7845ee1cf3e667, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationRate: 120
+--- !u!54 &535774766
+Rigidbody:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+<<<<<<< Updated upstream
   m_GameObject: {fileID: 1772622299}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -21468,6 +21501,20 @@ MonoBehaviour:
   m_Text: SHOP
 --- !u!222 &1772622302
 CanvasRenderer:
+=======
+  m_GameObject: {fileID: 535774757}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 5
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!143 &535774768
+CharacterController:
+>>>>>>> Stashed changes
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
