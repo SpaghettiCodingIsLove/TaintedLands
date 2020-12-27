@@ -87,7 +87,7 @@ public class PlayerStats : MonoBehaviour
             TakeDamage(20);
         }
 
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.Q) && canOpenShop == true)
         {
             if (isShopOpen)
             {
@@ -109,6 +109,45 @@ public class PlayerStats : MonoBehaviour
             {
                 PauseInventory();
             }
+        }
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("bullet"))
+        {
+            TakeDamage(50.0f);
+        }
+
+        if (other.gameObject.CompareTag("skull"))
+        {
+            TakeDamage(100.0f);
+        }
+
+        if(other.gameObject.CompareTag("market"))
+        {
+            canOpenShop = true;
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("market"))
+        {
+            canOpenShop = false;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("bullet"))
+        {
+            TakeDamage(50.0f);
+        }
+
+        if(collision.gameObject.CompareTag("skull"))
+        {
+            TakeDamage(100.0f);
         }
     }
 

@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - market
+  - bullet
+  - flame
+  - skull
   layers:
   - Default
   - TransparentFX
