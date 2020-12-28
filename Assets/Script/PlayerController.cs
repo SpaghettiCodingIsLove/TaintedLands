@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     
 
     // rotation that occurs in angles per second holding down input
-    public float rotationRate = 360;
+    public float rotationRate = 150;
 
     // units moved per second holding down move input
     private CharacterController controller;
