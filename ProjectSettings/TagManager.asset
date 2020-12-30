@@ -9,6 +9,7 @@ TagManager:
   - flame
   - skull
   - skeletonmonster
+  - lava
   layers:
   - Default
   - TransparentFX
