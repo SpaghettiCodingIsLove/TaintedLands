@@ -11093,9 +11093,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4000014053093344}
   - component: {fileID: 137000011697725882}
+  - component: {fileID: 352102377078161580}
   m_Layer: 0
   m_Name: Mesh_Weapon_01
-  m_TagString: Untagged
+  m_TagString: sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -11166,6 +11167,19 @@ SkinnedMeshRenderer:
     m_Center: {x: 0.000000044703484, y: 0.00000047683716, z: -0.35759473}
     m_Extent: {x: 0.1868911, y: 0.25362056, z: 2.0578191}
   m_DirtyAABB: 0
+--- !u!65 &352102377078161580
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000012530381132}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.91, y: 0.31, z: 0.36}
+  m_Center: {x: -0.23, y: 0.91, z: -0.91}
 --- !u!1 &1000012533009004
 GameObject:
   m_ObjectHideFlags: 0

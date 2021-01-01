@@ -15,6 +15,7 @@ TagManager:
   - iceDiamond
   - yellowDiamond
   - findRedDiamond
+  - sword
   layers:
   - Default
   - TransparentFX
