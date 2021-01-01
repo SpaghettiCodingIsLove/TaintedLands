@@ -9,11 +9,16 @@ public class PauseMenu2 : MonoBehaviour
     public static bool IsGamePaused = false;
     public GameObject PauseMenuUI;
     public Button exitGame;
+    public Button exitGame2;
 
 
     void Start()
     {
         exitGame.onClick.AddListener(delegate () {
+            ExitGame();
+        });
+
+        exitGame2.onClick.AddListener(delegate () {
             ExitGame();
         });
     }

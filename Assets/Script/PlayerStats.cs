@@ -18,6 +18,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject ShopUI;
     public GameObject InventoryUI;
     public Button buyArmour;
+    public GameObject GameOverUI;
     #endregion
 
     #region player stats variables
@@ -119,6 +120,11 @@ public class PlayerStats : MonoBehaviour
             TakeDamage(50.0f);
         }
 
+        if(other.gameObject.CompareTag("lava"))
+        {
+            TakeDamage(CurrentHealth);
+        }
+
         if (other.gameObject.CompareTag("skull"))
         {
             TakeDamage(100.0f);
@@ -175,6 +181,30 @@ public class PlayerStats : MonoBehaviour
         transform.position = position;
     }
 
+    public void LoadPlayerAfterDeath()
+    {
+        PlayerData data = SaveSystem.LoadData();
+
+        Money = data.Money;
+        Level = data.Level;
+        MaxHealth = data.MaxHealth;
+        CurrentHealth = data.CurrentHealth;
+        armourPrice = data.ArmourPrice;
+        damageProtection = data.DamageProtection;
+        amountOfHealthPotion = data.AmountOfHealthPotion;
+        Vector3 position;
+        position.x = data.Position[0];
+        position.y = data.Position[1];
+        position.z = data.Position[2];
+        transform.position = position;
+        potionsAmount.text = amountOfHealthPotion.ToString();
+        healthBar.SetMaxHealth(MaxHealth);
+        healthBar.SetHealth(CurrentHealth);
+        SetMoneyText();
+        armourPriceText.text = armourPrice.ToString();
+        moneyInShop.text = Money.ToString();
+    }
+
     #endregion
 
     #region Other
@@ -182,7 +212,14 @@ public class PlayerStats : MonoBehaviour
     void TakeDamage(float damage)
     {
         CurrentHealth -= damage*damageProtection;
+        if (CurrentHealth < 0)
+            CurrentHealth = 0;
         healthBar.SetHealth(CurrentHealth);
+
+        if(CurrentHealth == 0)
+        {
+            GameOverUI.SetActive(true);
+        }
     }
 
     void SetMoneyText()

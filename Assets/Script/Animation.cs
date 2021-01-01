@@ -5,7 +5,7 @@ using UnityEngine;
 public class Animation : MonoBehaviour
 {
     
-    public Animator anim; 
+    private Animator anim; 
     
     void Start()
     {
@@ -16,24 +16,31 @@ public class Animation : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.UpArrow))
         {
-            anim.Play("Walk");
+            anim.SetBool("iswalking", true);
+            //anim.Play("iswalking");
         }
         else if (Input.GetKey(KeyCode.DownArrow))
         {
-            anim.Play("WalkBack");
+            anim.SetBool("iswalkingbackward", true);
+            //anim.Play("iswalkingbackward");
+        }
+        else if(Input.GetKey(KeyCode.LeftArrow))
+        {
+            transform.Rotate(transform.up * Time.deltaTime * -100f);
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            transform.Rotate(transform.up * Time.deltaTime * 100f);
         }
         else if (Input.GetKey(KeyCode.LeftShift))
         {
-            
-            anim.Play("Run");
+            anim.SetBool("isrunning", true);
+            //anim.Play("isrunning");
             
         }
         else
         {
             anim.Play("Idle");
         }
-
-
-
     }
 }
