@@ -19,6 +19,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject InventoryUI;
     public Button buyArmour;
     public GameObject GameOverUI;
+    public Text LevelUI;
     #endregion
 
     #region player stats variables
@@ -49,13 +50,18 @@ public class PlayerStats : MonoBehaviour
             }
             for (int i = 0; i < GameObject.FindGameObjectsWithTag("redDiamond").Length; i++)
                 GameObject.FindGameObjectsWithTag("redDiamond")[i].SetActive(redDiamondVisibility);
+            SaveSystem.doLoadFromFile = false;
         }
         else
         {
             MaxHealth = MaxHealth * Level;
             CurrentHealth = MaxHealth;
+            Level = 1;
+            Money = 100;
         }
 
+
+        LevelUI.text = Level.ToString();
         potionsAmount.text = amountOfHealthPotion.ToString();
         healthBar.SetMaxHealth(MaxHealth);
         healthBar.SetHealth(CurrentHealth);
@@ -92,10 +98,6 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.D))
-        {
-            TakeDamage(20);
-        }
 
         if(Input.GetKeyDown(KeyCode.Q) && canOpenShop == true)
         {
@@ -129,14 +131,9 @@ public class PlayerStats : MonoBehaviour
             TakeDamage(50.0f);
         }
 
-        if(other.gameObject.CompareTag("findRedDiamond"))
+        if (other.gameObject.CompareTag("skeletonmonster"))
         {
-            redDiamondVisibilityLevel1 = false;
-            redDiamondVisibility = true;
-            other.gameObject.SetActive(redDiamondVisibilityLevel1);
-            Destroy(other.gameObject);
-            for(int i=0; i< GameObject.FindGameObjectsWithTag("redDiamond").Length; i++)
-                GameObject.FindGameObjectsWithTag("redDiamond")[i].SetActive(redDiamondVisibility);
+            TakeDamage(5.0f);
         }
 
         if(other.gameObject.CompareTag("sword"))
@@ -175,13 +172,36 @@ public class PlayerStats : MonoBehaviour
             TakeDamage(50.0f);
         }
 
-        if(collision.gameObject.CompareTag("skull"))
+        if (collision.gameObject.CompareTag("fireBall"))
+        {
+            TakeDamage(40.0f);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("iceBall"))
+        {
+            TakeDamage(30.0f);
+            Destroy(collision.gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("skull"))
         {
             TakeDamage(100.0f);
         }
 
         if (collision.gameObject.CompareTag("findRedDiamond"))
         {
+            Level += 1;
+            LevelUI.text = Level.ToString();
+            Money += 300;
+            MaxHealth += 100;
+            CurrentHealth = MaxHealth;
+            healthBar.SetMaxHealth(MaxHealth);
+            healthBar.SetHealth(CurrentHealth);
+            moneyInShop.text = Money.ToString();
+            SetMoneyText();
+            if (damageProtection > 0.4)
+                damageProtection -= 0.1f;
             redDiamondVisibilityLevel1 = false;
             redDiamondVisibility = true;
             collision.gameObject.SetActive(redDiamondVisibilityLevel1);
@@ -233,7 +253,7 @@ public class PlayerStats : MonoBehaviour
         for (int i = 0; i < GameObject.FindGameObjectsWithTag("findRedDiamond").Length; i++)
         {
             GameObject.FindGameObjectsWithTag("findRedDiamond")[i].SetActive(redDiamondVisibilityLevel1);
-            Destroy(GameObject.FindGameObjectsWithTag("findRedDiamond")[i]);
+            //Destroy(GameObject.FindGameObjectsWithTag("findRedDiamond")[i]);
         }
         for (int i = 0; i < GameObject.FindGameObjectsWithTag("redDiamond").Length; i++)
             GameObject.FindGameObjectsWithTag("redDiamond")[i].SetActive(redDiamondVisibility);
@@ -249,7 +269,7 @@ public class PlayerStats : MonoBehaviour
 
     #region Other
 
-    void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         CurrentHealth -= damage*damageProtection;
         if (CurrentHealth < 0)

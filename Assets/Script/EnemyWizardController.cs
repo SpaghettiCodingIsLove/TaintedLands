@@ -7,6 +7,11 @@ public class EnemyWizardController : MonoBehaviour
 {
     public float lookRadius = 35f;
 
+    public GameObject Bullet_Emitter1;
+    public GameObject Bullet;
+    public GameObject Bullet2;
+    public float BulletForwardForce;
+
     Transform target;
     NavMeshAgent agent;
     private Animator animator;
@@ -29,18 +34,45 @@ public class EnemyWizardController : MonoBehaviour
 
         if (distance <= lookRadius)
         {
-            agent.SetDestination(target.position);
-            animator.Play("Base Layer.move_forward");
+            if(Time.time - time > 3f)
+            {
+                FaceTarget();
+                animator.Play("Base Layer.idle_combat");
+                if (Random.Range(1, 2) == 1)
+                {
+                    GameObject TemporaryBulletHandler;
+                    TemporaryBulletHandler = Instantiate(Bullet, Bullet_Emitter1.transform.position, Bullet_Emitter1.transform.rotation) as GameObject;
+                    TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);
+                    Rigidbody temporaryRigidbody;
+                    temporaryRigidbody = TemporaryBulletHandler.GetComponent<Rigidbody>();
+                    temporaryRigidbody.AddForce(transform.forward * BulletForwardForce);
+                    Destroy(TemporaryBulletHandler, distance);
+                    
+                }
+                else
+                {
+                    GameObject TemporaryBulletHandler;
+                    TemporaryBulletHandler = Instantiate(Bullet2, Bullet_Emitter1.transform.position, Bullet_Emitter1.transform.rotation) as GameObject;
+                    TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);
+                    Rigidbody temporaryRigidbody;
+                    temporaryRigidbody = TemporaryBulletHandler.GetComponent<Rigidbody>();
+                    temporaryRigidbody.AddForce(transform.forward * BulletForwardForce);
+                    Destroy(TemporaryBulletHandler, distance);
+                }
+                time = Time.time;
+            }
 
             if (distance <= agent.stoppingDistance)
             {
-                FaceTarget();
-                if(Time.time - time > 3f)
+                if(Time.time - time > 1.5f)
                 {
                     animator.Play("Base Layer.idle_combat");
                     time = Time.time;
                 }
             }
+
+            agent.SetDestination(target.position);
+            animator.Play("Base Layer.move_forward");
         }
     }
 

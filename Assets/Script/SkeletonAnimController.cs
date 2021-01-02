@@ -27,14 +27,6 @@ public class SkeletonAnimController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        /*bool walking = Input.GetKey(KeyCode.W);
-
-        animator.SetBool("Walking", walking);
-
-        if(Input.GetKeyDown(KeyCode.A))
-        {
-            animator.SetTrigger("Attack");
-        }*/
 
         if(isWandering == false)
         {

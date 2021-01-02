@@ -1,0 +1,351 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4227561735393409320
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1712626278311064637}
+  - component: {fileID: 7937384093421693312}
+  - component: {fileID: 7735226838811409675}
+  - component: {fileID: 6723756475190307377}
+  m_Layer: 0
+  m_Name: IceBall
+  m_TagString: iceBall
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1712626278311064637
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227561735393409320}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.0049341, y: 2.160646, z: 5.4860954}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_Children:
+  - {fileID: 3474934229993047808}
+  - {fileID: 2271735956775655831}
+  - {fileID: 8811709822919961221}
+  - {fileID: 6584335703763421470}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &7937384093421693312
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227561735393409320}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &7735226838811409675
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227561735393409320}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: fb1e05f2bf2aa604f92ee3ef81ca81fc, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!135 &6723756475190307377
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227561735393409320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!1001 &2271735956776043283
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1712626278311064637}
+    m_Modifications:
+    - target: {fileID: 100004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_Name
+      value: Magic Ice Breath (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.070405796
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.039354164
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.41837215
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.48980913
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.8718297
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -58.656002
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+--- !u!4 &2271735956775655831 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab,
+    type: 3}
+  m_PrefabInstance: {fileID: 2271735956776043283}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3474934229992922500
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1712626278311064637}
+    m_Modifications:
+    - target: {fileID: 100004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_Name
+      value: Magic Ice Breath
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.07040572
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.039354086
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.41837215
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+--- !u!4 &3474934229993047808 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab,
+    type: 3}
+  m_PrefabInstance: {fileID: 3474934229992922500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &6584335703763293082
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1712626278311064637}
+    m_Modifications:
+    - target: {fileID: 100004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_Name
+      value: Magic Ice Breath (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.070405796
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.12000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.069999695
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.273856
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9617708
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -31.788002
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+--- !u!4 &6584335703763421470 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab,
+    type: 3}
+  m_PrefabInstance: {fileID: 6584335703763293082}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8811709822919569409
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1712626278311064637}
+    m_Modifications:
+    - target: {fileID: 100004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_Name
+      value: Magic Ice Breath (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.070405796
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.12000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.069999695
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.8688597
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.49505842
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -120.653
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
+--- !u!4 &8811709822919961221 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab,
+    type: 3}
+  m_PrefabInstance: {fileID: 8811709822919569409}
+  m_PrefabAsset: {fileID: 0}
