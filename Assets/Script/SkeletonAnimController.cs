@@ -6,13 +6,15 @@ public class SkeletonAnimController : MonoBehaviour
 {
     public float moveSpeed = 0.3f;
     public float rotSpeed = 100f;
+    private float time;
 
     private bool isWandering = false;
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
     private bool isWalking = false;
+    Transform target;
 
-    private GameObject player;
+    private int a = 0;
 
     private float health = 50;
 
@@ -20,15 +22,23 @@ public class SkeletonAnimController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        target = PlayerManager.instance.player.transform;
         animator = GetComponent<Animator>();
-        player = GameObject.FindGameObjectWithTag("Player");
+        time = Time.time;
     }
 
     // Update is called once per frame
     void Update()
     {
+        float distance = Vector3.Distance(this.transform.position, target.position);
 
-        if(isWandering == false)
+        if(a == 0)
+        {
+            Debug.Log(distance);
+            a = 1;
+        }
+
+        if (isWandering == false)
         {
             StartCoroutine(Wander());
         }
@@ -40,14 +50,18 @@ public class SkeletonAnimController : MonoBehaviour
         {
             transform.Rotate(transform.up * Time.deltaTime * -rotSpeed);
         }
-        if (isWalking == true && Vector3.Distance(this.transform.position, player.transform.position) <= 10)
+        if (isWalking == true && distance <= 10)
         {
-            animator.SetBool("Walking", isWalking);
-            this.transform.LookAt(player.transform);
+            animator.Play("Animation.DS_onehand_walk");
+            this.transform.LookAt(target);
             this.transform.position += transform.forward * moveSpeed * Time.deltaTime;
-            animator.SetTrigger("Attack");
+            if (distance < 3 && Time.time - time > 2)
+            {
+                animator.Play("Animation.DS_onehand_attack_A");
+                time = Time.time;
+            }
         }
-        if (isWalking == true && Vector3.Distance(transform.position, player.transform.position) > 10)
+        if (isWalking == true && distance > 10)
         {
             transform.position += transform.forward * moveSpeed;
             animator.SetBool("Walking", isWalking);

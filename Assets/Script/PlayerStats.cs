@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -40,17 +41,13 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("START " + SaveSystem.doLoadFromFile.ToString());
         if(SaveSystem.doLoadFromFile == true)
         {
+            Debug.Log("ODCZYT");
             LoadPLayer();
-            for (int i = 0; i < GameObject.FindGameObjectsWithTag("findRedDiamond").Length; i++)
-            {
-                GameObject.FindGameObjectsWithTag("findRedDiamond")[i].SetActive(redDiamondVisibilityLevel1);
-                Destroy(GameObject.FindGameObjectsWithTag("findRedDiamond")[i]);
-            }
-            for (int i = 0; i < GameObject.FindGameObjectsWithTag("redDiamond").Length; i++)
-                GameObject.FindGameObjectsWithTag("redDiamond")[i].SetActive(redDiamondVisibility);
             SaveSystem.doLoadFromFile = false;
+            Debug.Log("START " + SaveSystem.doLoadFromFile.ToString());
         }
         else
         {
@@ -141,11 +138,6 @@ public class PlayerStats : MonoBehaviour
             TakeDamage(30.0f);
         }
 
-        if(other.gameObject.CompareTag("lava"))
-        {
-            TakeDamage(CurrentHealth);
-        }
-
         if (other.gameObject.CompareTag("skull"))
         {
             TakeDamage(100.0f);
@@ -214,11 +206,6 @@ public class PlayerStats : MonoBehaviour
         {
             TakeDamage(30.0f);
         }
-
-        if (collision.gameObject.CompareTag("lava"))
-        {
-            TakeDamage(CurrentHealth);
-        }
     }
 
     #region Saving and Loading player stats
@@ -249,20 +236,8 @@ public class PlayerStats : MonoBehaviour
 
     public void LoadPlayerAfterDeath()
     {
-        LoadPLayer();
-        for (int i = 0; i < GameObject.FindGameObjectsWithTag("findRedDiamond").Length; i++)
-        {
-            GameObject.FindGameObjectsWithTag("findRedDiamond")[i].SetActive(redDiamondVisibilityLevel1);
-            //Destroy(GameObject.FindGameObjectsWithTag("findRedDiamond")[i]);
-        }
-        for (int i = 0; i < GameObject.FindGameObjectsWithTag("redDiamond").Length; i++)
-            GameObject.FindGameObjectsWithTag("redDiamond")[i].SetActive(redDiamondVisibility);
-        potionsAmount.text = amountOfHealthPotion.ToString();
-        healthBar.SetMaxHealth(MaxHealth);
-        healthBar.SetHealth(CurrentHealth);
-        SetMoneyText();
-        armourPriceText.text = armourPrice.ToString();
-        moneyInShop.text = Money.ToString();
+        SaveSystem.doLoadFromFile = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     #endregion

@@ -1166,4 +1166,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 0.3
   rotSpeed: 100
-  player: {fileID: 0}
