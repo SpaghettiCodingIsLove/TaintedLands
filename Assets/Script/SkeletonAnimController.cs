@@ -14,8 +14,6 @@ public class SkeletonAnimController : MonoBehaviour
     private bool isWalking = false;
     Transform target;
 
-    private int a = 0;
-
     private float health = 50;
 
     private Animator animator;
@@ -32,39 +30,35 @@ public class SkeletonAnimController : MonoBehaviour
     {
         float distance = Vector3.Distance(this.transform.position, target.position);
 
-        if(a == 0)
-        {
-            Debug.Log(distance);
-            a = 1;
-        }
-
-        if (isWandering == false)
-        {
-            StartCoroutine(Wander());
-        }
-        if(isRotatingRight == true)
-        {
-            transform.Rotate(transform.up * Time.deltaTime * rotSpeed);
-        }
-        if (isRotatingLeft == true)
-        {
-            transform.Rotate(transform.up * Time.deltaTime * -rotSpeed);
-        }
-        if (isWalking == true && distance <= 10)
+        if(distance <= 10 && distance > 2)
         {
             animator.Play("Animation.DS_onehand_walk");
             this.transform.LookAt(target);
-            this.transform.position += transform.forward * moveSpeed * Time.deltaTime;
-            if (distance < 3 && Time.time - time > 2)
-            {
-                animator.Play("Animation.DS_onehand_attack_A");
-                time = Time.time;
-            }
+            this.transform.position += transform.forward * moveSpeed;
         }
-        if (isWalking == true && distance > 10)
+        else if(distance <= 2)
         {
-            transform.position += transform.forward * moveSpeed;
-            animator.SetBool("Walking", isWalking);
+            animator.Play("Animation.DS_onehand_attack_A");
+        }
+        else
+        {
+            if (isWandering == false)
+            {
+                StartCoroutine(Wander());
+            }
+            if (isRotatingRight == true)
+            {
+                transform.Rotate(transform.up * Time.deltaTime * rotSpeed);
+            }
+            if (isRotatingLeft == true)
+            {
+                transform.Rotate(transform.up * Time.deltaTime * -rotSpeed);
+            }
+            if (isWalking == true)
+            {
+                transform.position += transform.forward * moveSpeed;
+                animator.SetBool("Walking", isWalking);
+            }
         }
     }
 
@@ -102,6 +96,9 @@ public class SkeletonAnimController : MonoBehaviour
     {
         health -= d;
         if (health <= 0)
+        {
+            PlayerManager.instance.player.GetComponent<PlayerStats>().AddMoney(10);
             Destroy(this.gameObject);
+        }
     }
 }

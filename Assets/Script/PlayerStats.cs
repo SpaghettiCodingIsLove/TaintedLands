@@ -262,6 +262,13 @@ public class PlayerStats : MonoBehaviour
         moneyAmount.text = Money.ToString();
     }
 
+    public void AddMoney(int m)
+    {
+        Money += m;
+        moneyAmount.text = Money.ToString();
+        moneyInShop.text = Money.ToString();
+    }
+
     #endregion
 
     #region Buy health and armor methods
