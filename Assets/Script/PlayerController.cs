@@ -113,10 +113,6 @@ public class PlayerController : MonoBehaviour
                 anim.SetBool("weaponOut", false);
             }
         }
-       
-
-
-
 
     }
 
