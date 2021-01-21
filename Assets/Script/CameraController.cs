@@ -5,11 +5,17 @@ using UnityEngine;
 public class CameraController : MonoBehaviour
 {
     [SerializeField]
-    private float distanceAway;
+    private float distanceAway = 12f;
     [SerializeField]
-    private float distanceUp;
+    private float mindistanceAway = 10f;
     [SerializeField]
-    private float smooth;
+    private float maxdistanceAway = 20f;
+    [SerializeField]
+    private float zoomspeed = 4f;
+    [SerializeField]
+    private float distanceUp = 3f;
+    [SerializeField]
+    private float smooth = 3f;
     [SerializeField]
     private Transform follow;
     private Vector3 targetPosition;
@@ -21,11 +27,14 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-
+        distanceAway += Input.GetAxis("Mouse ScrollWheel") * zoomspeed;
+        distanceAway = Mathf.Clamp(distanceAway, mindistanceAway, maxdistanceAway);
     }
 
     void LateUpdate()
     {
+
+
         targetPosition = follow.position + follow.up * distanceUp - follow.forward * distanceAway;
 
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * smooth);

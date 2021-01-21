@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         controller = GetComponent<CharacterController>();
         anim = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -77,15 +78,21 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetInteger("jump", 0);
         }
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q))
         {
-            anim.SetTrigger("attackl");
-
-        }   
-        if (Input.GetKeyDown(KeyCode.E))
+            anim.SetBool("attakl", true);
+        }
+        if (Input.GetKeyUp(KeyCode.Q))
         {
-            anim.SetTrigger("attackr");
-
+            anim.SetBool("attakl", false);
+        }
+        if (Input.GetKey(KeyCode.E))
+        {
+            anim.SetBool("attakr", true);
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            anim.SetBool("attakr", false);
         }
         if (Input.GetKey(KeyCode.R))
         {
@@ -95,6 +102,19 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("spell1",false);
         }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            if (anim.GetBool("weaponOut") == false)
+            {
+                anim.SetBool("weaponOut", true);
+            }
+            else
+            {
+                anim.SetBool("weaponOut", false);
+            }
+        }
+       
+
 
 
 

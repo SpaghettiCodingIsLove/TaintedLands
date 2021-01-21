@@ -339,6 +339,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9c3d22cdfbbcfd4f8d8019ff97a0f2e, type: 3}
+--- !u!1 &41394280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1031538201245075019, guid: fd29e2d3f6e994629b646987c9d25c89,
+    type: 3}
+  m_PrefabInstance: {fileID: 523335415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &59179843
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2941,6 +2947,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 332082275}
   m_CullTransparentMesh: 0
+--- !u!1 &336812138 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1031538201245075021, guid: fd29e2d3f6e994629b646987c9d25c89,
+    type: 3}
+  m_PrefabInstance: {fileID: 523335415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &346551715
 GameObject:
   m_ObjectHideFlags: 0
@@ -5402,6 +5414,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[8]
       value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 817593342662229526, guid: fd29e2d3f6e994629b646987c9d25c89,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0132651
+      objectReference: {fileID: 0}
+    - target: {fileID: 817593342662229526, guid: fd29e2d3f6e994629b646987c9d25c89,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.0632823
+      objectReference: {fileID: 0}
+    - target: {fileID: 817593342662229526, guid: fd29e2d3f6e994629b646987c9d25c89,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2369242
       objectReference: {fileID: 0}
     - target: {fileID: 864044449172911995, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
@@ -8260,6 +8287,11 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.data[33]
       value: -1.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2438493643655514965, guid: fd29e2d3f6e994629b646987c9d25c89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2786411803935661180, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
@@ -10540,6 +10572,16 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.data[7]
       value: 3.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3931338835156909160, guid: fd29e2d3f6e994629b646987c9d25c89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3931338835156909166, guid: fd29e2d3f6e994629b646987c9d25c89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3931338835168407556, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
@@ -10705,6 +10747,11 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.data[32]
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 3931338835168407556, guid: fd29e2d3f6e994629b646987c9d25c89,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 54a4e62baa3d3f349adb218a9e15478c, type: 2}
     - target: {fileID: 3975333500093961052, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
       propertyPath: blendShapeObjects.Array.data[0].blendShapes.Array.data[7].value
@@ -12790,6 +12837,11 @@ PrefabInstance:
       propertyPath: blendShapeObjects.Array.data[12].expandedInspector
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3975333500093961052, guid: fd29e2d3f6e994629b646987c9d25c89,
+        type: 3}
+      propertyPath: showShapes
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4149881647591108539, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
@@ -13035,6 +13087,11 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.data[12]
       value: -5
       objectReference: {fileID: 0}
+    - target: {fileID: 4348126793422068436, guid: fd29e2d3f6e994629b646987c9d25c89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4348126793427277532, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
@@ -13190,6 +13247,11 @@ PrefabInstance:
       propertyPath: m_BlendShapeWeights.Array.data[30]
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 4348126793427277532, guid: fd29e2d3f6e994629b646987c9d25c89,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 42bf0df233e5343aa9b045cd21f9e6b6, type: 2}
     - target: {fileID: 4398526995367205787, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[0]
@@ -14789,6 +14851,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_BlendShapeWeights.Array.data[7]
       value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5889884369032753438, guid: fd29e2d3f6e994629b646987c9d25c89,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5889884369035869556, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
@@ -18172,6 +18239,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8939074145106883300, guid: fd29e2d3f6e994629b646987c9d25c89, type: 3}
+    - {fileID: 3975333500093961052, guid: fd29e2d3f6e994629b646987c9d25c89, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: fd29e2d3f6e994629b646987c9d25c89, type: 3}
 --- !u!1 &523462390
 GameObject:
@@ -18350,17 +18418,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98babdfdca36cb74bbe91f572f97529e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  daggerBody: {fileID: 0}
-  daggerLeftHand: {fileID: 0}
-  daggerRightHand: {fileID: 0}
-  particleGeneric1: {fileID: 0}
-  positionGeneric1: {fileID: 0}
+  daggerBody: {fileID: 1305969840}
+  daggerLeftHand: {fileID: 336812138}
+  daggerRightHand: {fileID: 41394280}
+  particleGeneric1: {fileID: 190082, guid: e8b0803a706f145ebab879f55066e980, type: 3}
+  positionGeneric1: {fileID: 1529715250}
   particlesGeneric2: []
   lightsGeneric2: []
   particlesGeneric3: []
   lightsGeneric3: []
   particleBarbarian1: {fileID: 0}
   positionBarbarian1: {fileID: 0}
+--- !u!114 &535774759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 535774757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d67dc2144b57f62429df65592630b424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rotationRate: 150
 --- !u!65 &535774762
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18372,8 +18453,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1.8191147, z: 0.3660903}
+  m_Center: {x: 3.389658e-10, y: 0.9233818, z: -0.026533676}
 --- !u!4 &535774763 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1031538201244916305, guid: fd29e2d3f6e994629b646987c9d25c89,
@@ -18415,7 +18496,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 535774757}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 09aedda56a73c5e4d9442500d33344d4, type: 3}
   m_Name: 
@@ -25568,7 +25649,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29ea5f40620ceaf44a7eaeea50438d8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceAway: 7
+  distanceAway: 12
+  mindistanceAway: 10
+  maxdistanceAway: 20
+  zoomspeed: 4
   distanceUp: 2
   smooth: 3
   follow: {fileID: 535774763}
@@ -26668,6 +26752,12 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1299298724}
   m_CullTransparentMesh: 0
+--- !u!1 &1305969840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2438493643655514965, guid: fd29e2d3f6e994629b646987c9d25c89,
+    type: 3}
+  m_PrefabInstance: {fileID: 523335415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1317821051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d9c3d22cdfbbcfd4f8d8019ff97a0f2e,
@@ -27965,6 +28055,12 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 
+--- !u!1 &1529715250 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 361268959624854122, guid: fd29e2d3f6e994629b646987c9d25c89,
+    type: 3}
+  m_PrefabInstance: {fileID: 523335415}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1530024339 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 977e7278d3486f1489724a6d226b9ca0,
