@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SkeletonAddingController : MonoBehaviour
 {
@@ -8,9 +9,21 @@ public class SkeletonAddingController : MonoBehaviour
     public GameObject skeletonMonster;
     public GameObject male;
     public GameObject female;
+
+    public Text XPositionText;
+    public Text YPositionText;
+    public Text ZPositionText;
+
+    Transform target;
     // Start is called before the first frame update
     void Start()
     {
+        target = PlayerManager.instance.player.transform;
+
+        XPositionText.text = target.position.x.ToString();
+        YPositionText.text = target.position.y.ToString();
+        ZPositionText.text = target.position.z.ToString();
+
         for (int i = 0; i < 50; i++)
         {
             CreateSkeletonMonster();
@@ -30,6 +43,13 @@ public class SkeletonAddingController : MonoBehaviour
         {
             CreateFemaleCitizen();
         }
+    }
+
+    void Update()
+    {
+        XPositionText.text = target.position.x.ToString();
+        YPositionText.text = target.position.y.ToString();
+        ZPositionText.text = target.position.z.ToString();
     }
 
     void CreateSkeletonMonster()

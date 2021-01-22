@@ -7,9 +7,13 @@ using UnityEngine.SceneManagement;
 public class PauseMenu2 : MonoBehaviour
 {
     public static bool IsGamePaused = false;
+    public static bool IsMapOpen = false;
+
     public GameObject PauseMenuUI;
     public Button exitGame;
     public Button exitGame2;
+
+    public GameObject MapUI;
 
 
     void Start()
@@ -37,6 +41,18 @@ public class PauseMenu2 : MonoBehaviour
                 Pause();
             }
         }
+
+        if(Input.GetKeyDown(KeyCode.M))
+        {
+            if(IsMapOpen)
+            {
+                CloseMap();
+            }
+            else
+            {
+                OpenMap();
+            }
+        }
     }
 
     void Resume()
@@ -51,6 +67,20 @@ public class PauseMenu2 : MonoBehaviour
         PauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         IsGamePaused = true;
+    }
+
+    void OpenMap()
+    {
+        MapUI.SetActive(true);
+        Time.timeScale = 0f;
+        IsMapOpen = true;
+    }
+
+    void CloseMap()
+    {
+        MapUI.SetActive(false);
+        Time.timeScale = 1f;
+        IsMapOpen = false;
     }
 
     public void ExitGame()
