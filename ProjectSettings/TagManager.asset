@@ -18,6 +18,8 @@ TagManager:
   - sword
   - fireBall
   - iceBall
+  - magicIceBall
+  - wizard
   layers:
   - Default
   - TransparentFX

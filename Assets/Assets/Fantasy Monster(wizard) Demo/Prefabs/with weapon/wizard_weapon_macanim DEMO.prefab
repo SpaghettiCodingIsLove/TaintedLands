@@ -4977,7 +4977,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4000013543142848
 Transform:
   m_ObjectHideFlags: 0
@@ -16709,9 +16709,10 @@ GameObject:
   - component: {fileID: 95000012058624550}
   - component: {fileID: 8870246463524261314}
   - component: {fileID: 2290983484103042586}
+  - component: {fileID: 227144671900551129}
   m_Layer: 0
   m_Name: wizard_weapon_macanim DEMO
-  m_TagString: Untagged
+  m_TagString: wizard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -16808,10 +16809,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 20
+  Damage: {fileID: 198000011265403402}
   Bullet_Emitter1: {fileID: 4586130118954669634}
   Bullet: {fileID: 4881365868384240461, guid: 7ee458e1538d8fc4882543fb2a9a4d01, type: 3}
   Bullet2: {fileID: 4227561735393409320, guid: 341b7f8ae2acb3f4eb8b931e7eea41d7, type: 3}
   BulletForwardForce: 1000
+--- !u!65 &227144671900551129
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1000013586557078}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.81, y: 5.98, z: 1.81}
+  m_Center: {x: 0, y: 3.58, z: 0}
 --- !u!1 &1000013699516860
 GameObject:
   m_ObjectHideFlags: 0

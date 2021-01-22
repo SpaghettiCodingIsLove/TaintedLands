@@ -166,13 +166,13 @@ public class PlayerStats : MonoBehaviour
 
         if (collision.gameObject.CompareTag("fireBall"))
         {
-            TakeDamage(40.0f);
+            TakeDamage(1.0f);
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("iceBall"))
         {
-            TakeDamage(30.0f);
+            TakeDamage(1.0f);
             Destroy(collision.gameObject);
         }
 

@@ -6018,17 +6018,17 @@ PrefabInstance:
     - target: {fileID: 1031538201244916305, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1239
+      value: 2789
       objectReference: {fileID: 0}
     - target: {fileID: 1031538201244916305, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 238
+      value: 134.78
       objectReference: {fileID: 0}
     - target: {fileID: 1031538201244916305, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2755
+      value: 3314.76
       objectReference: {fileID: 0}
     - target: {fileID: 1031538201244916305, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
@@ -18531,6 +18531,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d67dc2144b57f62429df65592630b424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SpellSpawner: {fileID: 674563024}
+  IceBallSpell: {fileID: 190082, guid: e8b0803a706f145ebab879f55066e980, type: 3}
   rotationRate: 150
 --- !u!65 &535774762
 BoxCollider:
@@ -19685,6 +19687,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 27bfdb9a40efac94b969eaf77cea92d9,
     type: 3}
   m_PrefabInstance: {fileID: 659997891}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &674563024 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2865597220339145101, guid: fd29e2d3f6e994629b646987c9d25c89,
+    type: 3}
+  m_PrefabInstance: {fileID: 523335415}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &679064802
 PrefabInstance:

@@ -7,6 +7,12 @@ public class EnemyWizardController : MonoBehaviour
 {
     public float lookRadius = 35f;
 
+    private int HP = 100;
+    private bool isDead = false;
+    private float deadTime;
+
+    public ParticleSystem Damage;
+
     public GameObject Bullet_Emitter1;
     public GameObject Bullet;
     public GameObject Bullet2;
@@ -32,7 +38,12 @@ public class EnemyWizardController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
-        if (distance <= lookRadius)
+        if(isDead && Time.time - deadTime > 10)
+        {
+            Destroy(gameObject);
+        }
+
+        if (distance <= lookRadius && !isDead)
         {
             if(Time.time - time > 3f)
             {
@@ -73,6 +84,23 @@ public class EnemyWizardController : MonoBehaviour
 
             agent.SetDestination(target.position);
             animator.Play("Base Layer.move_forward");
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("magicIceBall"))
+        {
+            HP = HP - 10;
+            Damage.Play();
+            animator.Play("Base Layer.damage_001");
+            if (HP == 0 && !isDead)
+            {
+                isDead = true;
+                deadTime = Time.time;
+                animator.Play("Base Layer.dead");
+            }
+            Debug.Log("Reakcja na zaklęcie: " + HP);
         }
     }
 
