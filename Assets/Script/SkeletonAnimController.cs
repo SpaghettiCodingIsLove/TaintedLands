@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SkeletonAnimController : MonoBehaviour
 {
+    public float lookRadius = 10f;
+
     public float moveSpeed = 0.3f;
     public float rotSpeed = 100f;
     private float time;
@@ -15,11 +17,14 @@ public class SkeletonAnimController : MonoBehaviour
     Transform target;
 
     private float health = 50;
-
+    
+    UnityEngine.AI.NavMeshAgent agent;
     private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        agent.Warp(transform.position);
         target = PlayerManager.instance.player.transform;
         animator = GetComponent<Animator>();
         time = Time.time;
@@ -30,7 +35,7 @@ public class SkeletonAnimController : MonoBehaviour
     {
         float distance = Vector3.Distance(this.transform.position, target.position);
 
-        if(distance <= 10 && distance > 2)
+        /*if(distance <= 10 && distance > 2)
         {
             animator.Play("Animation.DS_onehand_walk");
             this.transform.LookAt(target);
@@ -39,6 +44,18 @@ public class SkeletonAnimController : MonoBehaviour
         else if(distance <= 2)
         {
             animator.Play("Animation.DS_onehand_attack_A");
+        }*/
+        if (distance <= lookRadius && distance > 2f)
+        {
+            FaceTarget();
+            animator.SetBool("Walking", true);
+        }
+        else if (distance <= 2f)
+        {
+            animator.SetBool("Walking", false);
+            animator.SetBool("Attack", true);
+            time = Time.time;
+            Debug.Log("Szkieletor powinien zaatakować");
         }
         else
         {
@@ -92,6 +109,13 @@ public class SkeletonAnimController : MonoBehaviour
         isWandering = false;
     }
 
+    void FaceTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
+        transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
+    }
+
     private void TakeDamage(float d)
     {
         health -= d;
@@ -100,5 +124,19 @@ public class SkeletonAnimController : MonoBehaviour
             PlayerManager.instance.player.GetComponent<PlayerStats>().AddMoney(10);
             Destroy(this.gameObject);
         }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("magicIceBall"))
+        {
+            TakeDamage(25);
+        }
+    }
+
+    void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, lookRadius);
     }
 }

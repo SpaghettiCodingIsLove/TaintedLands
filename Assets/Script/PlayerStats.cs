@@ -123,25 +123,6 @@ public class PlayerStats : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("bullet"))
-        {
-            TakeDamage(50.0f);
-        }
-
-        if (other.gameObject.CompareTag("skeletonmonster"))
-        {
-            TakeDamage(5.0f);
-        }
-
-        if(other.gameObject.CompareTag("sword"))
-        {
-            TakeDamage(30.0f);
-        }
-
-        if (other.gameObject.CompareTag("skull"))
-        {
-            TakeDamage(100.0f);
-        }
 
         if(other.gameObject.CompareTag("market"))
         {
@@ -159,6 +140,11 @@ public class PlayerStats : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        if(collision.gameObject.CompareTag("sword"))
+        {
+            TakeDamage(30.0f);
+        }
+
         if (collision.gameObject.CompareTag("bullet"))
         {
             TakeDamage(50.0f);
@@ -179,6 +165,11 @@ public class PlayerStats : MonoBehaviour
         if (collision.gameObject.CompareTag("skull"))
         {
             TakeDamage(100.0f);
+        }
+
+        if (collision.gameObject.CompareTag("skeletonmonster"))
+        {
+            TakeDamage(10.0f);
         }
 
         if (collision.gameObject.CompareTag("findRedDiamond"))

@@ -94,13 +94,13 @@ public class EnemyWizardController : MonoBehaviour
             HP = HP - 10;
             Damage.Play();
             animator.Play("Base Layer.damage_001");
-            if (HP == 0 && !isDead)
+            if (HP <= 0 && !isDead)
             {
+                PlayerManager.instance.player.GetComponent<PlayerStats>().AddMoney(250);
                 isDead = true;
                 deadTime = Time.time;
                 animator.Play("Base Layer.dead");
             }
-            Debug.Log("Reakcja na zaklęcie: " + HP);
         }
     }
 
