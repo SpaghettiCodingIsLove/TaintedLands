@@ -15,6 +15,8 @@ public class PlayerData
     public bool RedDiamondVisibility = false;
     public bool RedDiamondVisibilityLevel1 = false;
     public float[] Position;
+    public int NumOfKills;
+    public int NumOfFoundDiamonds;
 
     public PlayerData(PlayerStats player)
     {
@@ -27,6 +29,8 @@ public class PlayerData
         CurrentHealth = player.CurrentHealth;
         RedDiamondVisibility = player.redDiamondVisibility;
         RedDiamondVisibilityLevel1 = player.redDiamondVisibilityLevel1;
+        NumOfKills = player.NumOfKills;
+        NumOfFoundDiamonds = player.NumOfFoundDiamonds;
         Position = new float[3];
         Position[0] = player.transform.position.x;
         Position[1] = player.transform.position.y;

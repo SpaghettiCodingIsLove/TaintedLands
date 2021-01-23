@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class AchievementsMenager : MonoBehaviour
 {
-    public int numOfKills = 0;
-    public int numOfFoundDiamonds = 0;
+    private int numOfKills = 0;
+    private int numOfFoundDiamonds = 0;
 
     public Text isComplited1;
     public Text isComplited2;
@@ -24,7 +24,11 @@ public class AchievementsMenager : MonoBehaviour
 
     void Start()
     {
+
         openAchievementsPanel.onClick.AddListener(delegate () {
+            numOfKills = PlayerManager.instance.player.GetComponent<PlayerStats>().NumOfKills;
+            numOfFoundDiamonds = PlayerManager.instance.player.GetComponent<PlayerStats>().NumOfFoundDiamonds;
+
             if (numOfKills < 10)
             {
                 numOfKillsUI1.text = numOfKills.ToString();

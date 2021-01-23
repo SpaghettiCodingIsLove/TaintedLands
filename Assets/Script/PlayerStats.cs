@@ -36,6 +36,9 @@ public class PlayerStats : MonoBehaviour
     public int amountOfHealthPotion = 0;
     public bool redDiamondVisibility = false;
     public bool redDiamondVisibilityLevel1 = false;
+
+    public int NumOfKills = 0;
+    public int NumOfFoundDiamonds = 0;
     #endregion
 
     // Start is called before the first frame update
@@ -96,7 +99,7 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.Q) && canOpenShop == true)
+        if(Input.GetKeyDown(KeyCode.Q))
         {
             if (isShopOpen)
             {
@@ -218,6 +221,8 @@ public class PlayerStats : MonoBehaviour
         amountOfHealthPotion = data.AmountOfHealthPotion;
         redDiamondVisibility = data.RedDiamondVisibility;
         redDiamondVisibilityLevel1 = data.RedDiamondVisibilityLevel1;
+        NumOfKills = data.NumOfKills;
+        NumOfFoundDiamonds = data.NumOfFoundDiamonds;
         Vector3 position;
         position.x = data.Position[0];
         position.y = data.Position[1];

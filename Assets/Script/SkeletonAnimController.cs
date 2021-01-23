@@ -122,6 +122,7 @@ public class SkeletonAnimController : MonoBehaviour
         if (health <= 0)
         {
             PlayerManager.instance.player.GetComponent<PlayerStats>().AddMoney(10);
+            PlayerManager.instance.player.GetComponent<PlayerStats>().NumOfKills++;
             Destroy(this.gameObject);
         }
     }

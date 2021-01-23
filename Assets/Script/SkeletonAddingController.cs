@@ -43,6 +43,16 @@ public class SkeletonAddingController : MonoBehaviour
         {
             CreateFemaleCitizen();
         }
+
+        for (int i = 0; i < 20; i++)
+        {
+            CreateMaleCitizen2();
+        }
+
+        for (int i = 0; i < 20; i++)
+        {
+            CreateFemaleCitizen2();
+        }
     }
 
     void Update()
@@ -73,6 +83,18 @@ public class SkeletonAddingController : MonoBehaviour
     void CreateFemaleCitizen()
     {
         Vector3 vector = new Vector3(Random.Range(2553.0f, 2785.0f), 100.0f, Random.Range(501.0f, 900.0f));
+        Instantiate(female, vector, female.transform.rotation);
+    }
+
+    void CreateMaleCitizen2()
+    {
+        Vector3 vector = new Vector3(Random.Range(835.0f, 1003.0f), 136.0f, Random.Range(2728.0f, 2874.0f));
+        Instantiate(male, vector, male.transform.rotation);
+    }
+
+    void CreateFemaleCitizen2()
+    {
+        Vector3 vector = new Vector3(Random.Range(835.0f, 1003.0f), 136.0f, Random.Range(2728.0f, 2874.0f));
         Instantiate(female, vector, female.transform.rotation);
     }
 }
