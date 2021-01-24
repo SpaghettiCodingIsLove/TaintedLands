@@ -129,7 +129,7 @@ public class SkeletonAnimController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("magicIceBall"))
+        if (collision.gameObject.CompareTag("spell"))
         {
             TakeDamage(25);
         }

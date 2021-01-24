@@ -9956,7 +9956,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4000013493637514
 Transform:
   m_ObjectHideFlags: 0
@@ -16810,6 +16810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lookRadius: 20
   Damage: {fileID: 198000011265403402}
+  Attack: {fileID: 198000010413749280}
   Bullet_Emitter1: {fileID: 4586130118954669634}
   Bullet: {fileID: 4881365868384240461, guid: 7ee458e1538d8fc4882543fb2a9a4d01, type: 3}
   Bullet2: {fileID: 4227561735393409320, guid: 341b7f8ae2acb3f4eb8b931e7eea41d7, type: 3}

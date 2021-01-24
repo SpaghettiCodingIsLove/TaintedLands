@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7937384093421693312}
   - component: {fileID: 7735226838811409675}
   - component: {fileID: 6723756475190307377}
+  - component: {fileID: 1697131190997282099}
+  - component: {fileID: 2306230700439278372}
   m_Layer: 0
   m_Name: IceBall
   m_TagString: iceBall
@@ -28,12 +30,9 @@ Transform:
   m_GameObject: {fileID: 4227561735393409320}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.0049341, y: 2.160646, z: 5.4860954}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
-  - {fileID: 3474934229993047808}
-  - {fileID: 2271735956775655831}
   - {fileID: 8811709822919961221}
-  - {fileID: 6584335703763421470}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -97,195 +96,35 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &2271735956776043283
-PrefabInstance:
+--- !u!65 &1697131190997282099
+BoxCollider:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1712626278311064637}
-    m_Modifications:
-    - target: {fileID: 100004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_Name
-      value: Magic Ice Breath (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.070405796
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.039354164
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.41837215
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.48980913
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.8718297
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -58.656002
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
---- !u!4 &2271735956775655831 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab,
-    type: 3}
-  m_PrefabInstance: {fileID: 2271735956776043283}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &3474934229992922500
-PrefabInstance:
+  m_GameObject: {fileID: 4227561735393409320}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &2306230700439278372
+Rigidbody:
   m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1712626278311064637}
-    m_Modifications:
-    - target: {fileID: 100004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_Name
-      value: Magic Ice Breath
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.07040572
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.039354086
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.41837215
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
---- !u!4 &3474934229993047808 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab,
-    type: 3}
-  m_PrefabInstance: {fileID: 3474934229992922500}
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &6584335703763293082
-PrefabInstance:
-  m_ObjectHideFlags: 0
+  m_GameObject: {fileID: 4227561735393409320}
   serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 1712626278311064637}
-    m_Modifications:
-    - target: {fileID: 100004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_Name
-      value: Magic Ice Breath (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.070405796
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.12000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.069999695
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.273856
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9617708
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -31.788002
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
---- !u!4 &6584335703763421470 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab,
-    type: 3}
-  m_PrefabInstance: {fileID: 6584335703763293082}
-  m_PrefabAsset: {fileID: 0}
+  m_Mass: 0.1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &8811709822919569409
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -307,31 +146,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.069999695
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.8688597
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.49505842
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: -120.653
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 0ceac5d5375134ac883cdc49b7992bab, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y

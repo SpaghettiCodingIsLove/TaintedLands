@@ -10,7 +10,9 @@ public class PlayerController : MonoBehaviour
     private string TurnInputAxis = "Horizontal";
 
     public GameObject SpellSpawner;
-    public GameObject IceBallSpell;
+    public GameObject MagicSpell1;
+    public GameObject MagicSpell2;
+    public GameObject MagicSpell3;
     
 
     // rotation that occurs in angles per second holding down input
@@ -88,6 +90,13 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.Q))
         {
             anim.SetBool("attakl", false);
+            GameObject TemporaryBulletHandler;
+            TemporaryBulletHandler = Instantiate(MagicSpell1, SpellSpawner.transform.position, SpellSpawner.transform.rotation) as GameObject;
+            //TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);
+            Rigidbody temporaryRigidbody;
+            temporaryRigidbody = TemporaryBulletHandler.GetComponent<Rigidbody>();
+            temporaryRigidbody.AddForce(transform.forward * 30);
+            Destroy(TemporaryBulletHandler, 5.0f);
         }
         if (Input.GetKey(KeyCode.E))
         {
@@ -96,20 +105,32 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.E))
         {
             anim.SetBool("attakr", false);
+            GameObject TemporaryBulletHandler;
+            TemporaryBulletHandler = Instantiate(MagicSpell2, SpellSpawner.transform.position, SpellSpawner.transform.rotation) as GameObject;
+            //TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);
+            Rigidbody temporaryRigidbody;
+            temporaryRigidbody = TemporaryBulletHandler.GetComponent<Rigidbody>();
+            temporaryRigidbody.AddForce(transform.forward * 30);
+            Destroy(TemporaryBulletHandler, 5.0f);
+        }
+        if (Input.GetKey(KeyCode.T))
+        {
+            anim.SetBool("attakr", true);
+        }
+        if (Input.GetKeyUp(KeyCode.T))
+        {
+            anim.SetBool("attakr", false);
+            GameObject TemporaryBulletHandler;
+            TemporaryBulletHandler = Instantiate(MagicSpell3, SpellSpawner.transform.position, SpellSpawner.transform.rotation) as GameObject;
+            //TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);
+            Rigidbody temporaryRigidbody;
+            temporaryRigidbody = TemporaryBulletHandler.GetComponent<Rigidbody>();
+            temporaryRigidbody.AddForce(transform.forward * 30);
+            Destroy(TemporaryBulletHandler, 5.0f);
         }
         if (Input.GetKey(KeyCode.R))
         {
             anim.SetBool("spell1",true);
-        }
-        if (Input.GetKey(KeyCode.N))
-        {
-            GameObject TemporaryBulletHandler;
-            TemporaryBulletHandler = Instantiate(IceBallSpell, SpellSpawner.transform.position, SpellSpawner.transform.rotation) as GameObject;
-            TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);
-            Rigidbody temporaryRigidbody;
-            temporaryRigidbody = TemporaryBulletHandler.GetComponent<Rigidbody>();
-            temporaryRigidbody.AddForce(transform.forward * 10);
-            Destroy(TemporaryBulletHandler, 3.0f);
         }
         if (Input.GetKeyUp(KeyCode.R))
         {

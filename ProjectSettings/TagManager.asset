@@ -20,6 +20,7 @@ TagManager:
   - iceBall
   - magicIceBall
   - wizard
+  - spell
   layers:
   - Default
   - TransparentFX

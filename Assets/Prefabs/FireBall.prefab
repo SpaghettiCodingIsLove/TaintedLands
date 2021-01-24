@@ -30,12 +30,9 @@ Transform:
   m_GameObject: {fileID: 4881365868384240461}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -1.0049341, y: 2.160646, z: 5.4860954}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 0.3}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_Children:
-  - {fileID: 7001432902323978566}
-  - {fileID: 4772037619276623745}
   - {fileID: 9070065196346651211}
-  - {fileID: 6408533957244041018}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -107,7 +104,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4881365868384240461}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 0.2
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -128,243 +125,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &4772037619277018373
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4307656210198044137}
-    m_Modifications:
-    - target: {fileID: 100004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_Name
-      value: Magic Fire Breath (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.03999988
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.02000014
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.009999275
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.73390305
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6792543
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -94.42899
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
---- !u!4 &4772037619276623745 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a,
-    type: 3}
-  m_PrefabInstance: {fileID: 4772037619277018373}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &6408533957243645374
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4307656210198044137}
-    m_Modifications:
-    - target: {fileID: 100004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_Name
-      value: Magic Fire Breath (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.02000014
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.22999921
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.049999554
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.6193127
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.12603353
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.036540985
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: -0.7741009
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_RootOrder
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 104.526
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -503.31
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: -156.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
---- !u!4 &6408533957244041018 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a,
-    type: 3}
-  m_PrefabInstance: {fileID: 6408533957243645374}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &7001432902324378562
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 4307656210198044137}
-    m_Modifications:
-    - target: {fileID: 100004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_Name
-      value: Magic Fire Breath
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.04
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_RootOrder
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 19800004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
-      propertyPath: InitialModule.startSize.minScalar
-      value: 0.5
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
---- !u!4 &7001432902323978566 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a,
-    type: 3}
-  m_PrefabInstance: {fileID: 7001432902324378562}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &9070065196347041999
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -376,6 +136,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Magic Fire Breath (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.07
@@ -386,39 +150,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.03
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.9830824
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.06541113
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.11375884
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.127786
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 15.434001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -167.602
+      value: -180
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 174.07301
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: b3c7e3237defa4665a9468e80e0cf78a, type: 3}
       propertyPath: m_LocalScale.x

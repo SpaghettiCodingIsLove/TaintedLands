@@ -12,6 +12,7 @@ public class EnemyWizardController : MonoBehaviour
     private float deadTime;
 
     public ParticleSystem Damage;
+    public ParticleSystem Attack;
 
     public GameObject Bullet_Emitter1;
     public GameObject Bullet;
@@ -51,6 +52,7 @@ public class EnemyWizardController : MonoBehaviour
                 animator.Play("Base Layer.idle_combat");
                 if (Random.Range(1, 2) == 1)
                 {
+                    Attack.Play();
                     GameObject TemporaryBulletHandler;
                     TemporaryBulletHandler = Instantiate(Bullet, Bullet_Emitter1.transform.position, Bullet_Emitter1.transform.rotation) as GameObject;
                     TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);
@@ -62,6 +64,7 @@ public class EnemyWizardController : MonoBehaviour
                 }
                 else
                 {
+                    Attack.Play();
                     GameObject TemporaryBulletHandler;
                     TemporaryBulletHandler = Instantiate(Bullet2, Bullet_Emitter1.transform.position, Bullet_Emitter1.transform.rotation) as GameObject;
                     TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);
@@ -89,12 +92,12 @@ public class EnemyWizardController : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("magicIceBall"))
+        if (collision.gameObject.CompareTag("spell"))
         {
             HP = HP - 10;
             Damage.Play();
             animator.Play("Base Layer.damage_001");
-            if (HP <= 0 && !isDead)
+            if (HP == 0)
             {
                 PlayerManager.instance.player.GetComponent<PlayerStats>().AddMoney(250);
                 isDead = true;

@@ -99,7 +99,7 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.Q))
+        if(Input.GetKeyDown(KeyCode.L))
         {
             if (isShopOpen)
             {
@@ -155,19 +155,19 @@ public class PlayerStats : MonoBehaviour
 
         if (collision.gameObject.CompareTag("fireBall"))
         {
-            TakeDamage(1.0f);
+            TakeDamage(20.0f);
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("iceBall"))
         {
-            TakeDamage(1.0f);
+            TakeDamage(20.0f);
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("skull"))
         {
-            TakeDamage(100.0f);
+            TakeDamage(20.0f);
         }
 
         if (collision.gameObject.CompareTag("skeletonmonster"))
