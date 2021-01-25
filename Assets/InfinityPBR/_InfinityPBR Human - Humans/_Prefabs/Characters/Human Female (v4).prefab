@@ -63256,13 +63256,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2865597220339145101}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.33181307, y: 1.4863051, z: 0.87}
+  m_LocalRotation: {x: -0.09081913, y: -0, z: -0, w: 0.9958674}
+  m_LocalPosition: {x: 0.33181307, y: 1.761, z: 0.819}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1031538201244916305}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -10.4210005, y: 0, z: 0}
 --- !u!1 &2905173201164889655
 GameObject:
   m_ObjectHideFlags: 0
@@ -78632,6 +78632,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 9
       objectReference: {fileID: 0}
+    - target: {fileID: 162522, guid: d0b8d39dbfeef401f9fe04e9e3bc0a9b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 187060, guid: d0b8d39dbfeef401f9fe04e9e3bc0a9b, type: 3}
       propertyPath: m_Layer
       value: 9
@@ -78682,6 +78686,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 420334, guid: d0b8d39dbfeef401f9fe04e9e3bc0a9b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19890450, guid: d0b8d39dbfeef401f9fe04e9e3bc0a9b, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 19890450, guid: d0b8d39dbfeef401f9fe04e9e3bc0a9b, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19890450, guid: d0b8d39dbfeef401f9fe04e9e3bc0a9b, type: 3}
+      propertyPath: startDelay.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19890450, guid: d0b8d39dbfeef401f9fe04e9e3bc0a9b, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19890450, guid: d0b8d39dbfeef401f9fe04e9e3bc0a9b, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 19890450, guid: d0b8d39dbfeef401f9fe04e9e3bc0a9b, type: 3}
+      propertyPath: InitialModule.size3D
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -10,17 +10,13 @@ TagManager:
   - skull
   - skeletonmonster
   - lava
-  - redDiamond
-  - greenDiamond
-  - iceDiamond
-  - yellowDiamond
-  - findRedDiamond
   - sword
   - fireBall
   - iceBall
   - magicIceBall
   - wizard
   - spell
+  - diamond
   layers:
   - Default
   - TransparentFX

@@ -131,6 +131,7 @@ public class SkeletonAnimController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("spell"))
         {
+            Destroy(collision.gameObject);
             TakeDamage(25);
         }
     }

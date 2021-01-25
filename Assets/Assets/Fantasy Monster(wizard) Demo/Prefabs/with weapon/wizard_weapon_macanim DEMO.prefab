@@ -16814,7 +16814,7 @@ MonoBehaviour:
   Bullet_Emitter1: {fileID: 4586130118954669634}
   Bullet: {fileID: 4881365868384240461, guid: 7ee458e1538d8fc4882543fb2a9a4d01, type: 3}
   Bullet2: {fileID: 4227561735393409320, guid: 341b7f8ae2acb3f4eb8b931e7eea41d7, type: 3}
-  BulletForwardForce: 1000
+  BulletForwardForce: 500
 --- !u!65 &227144671900551129
 BoxCollider:
   m_ObjectHideFlags: 0

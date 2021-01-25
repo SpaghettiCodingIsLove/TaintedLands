@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public GameObject MagicSpell1;
     public GameObject MagicSpell2;
     public GameObject MagicSpell3;
+
+    private float BulletForwardForce = 500f;
     
 
     // rotation that occurs in angles per second holding down input
@@ -87,7 +89,7 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("attakl", true);
         }
-        if (Input.GetKeyUp(KeyCode.Q))
+        if (Input.GetKeyUp(KeyCode.Q) && PlayerManager.instance.player.GetComponent<PlayerStats>().Level >= 1)
         {
             anim.SetBool("attakl", false);
             GameObject TemporaryBulletHandler;
@@ -95,14 +97,18 @@ public class PlayerController : MonoBehaviour
             //TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);
             Rigidbody temporaryRigidbody;
             temporaryRigidbody = TemporaryBulletHandler.GetComponent<Rigidbody>();
-            temporaryRigidbody.AddForce(transform.forward * 30);
+            temporaryRigidbody.AddForce(transform.forward * BulletForwardForce);
             Destroy(TemporaryBulletHandler, 5.0f);
+        }
+        else if (Input.GetKeyUp(KeyCode.Q))
+        {
+            anim.SetBool("attakl", false);
         }
         if (Input.GetKey(KeyCode.E))
         {
             anim.SetBool("attakr", true);
         }
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyUp(KeyCode.E) && PlayerManager.instance.player.GetComponent<PlayerStats>().Level >= 2)
         {
             anim.SetBool("attakr", false);
             GameObject TemporaryBulletHandler;
@@ -110,14 +116,18 @@ public class PlayerController : MonoBehaviour
             //TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);
             Rigidbody temporaryRigidbody;
             temporaryRigidbody = TemporaryBulletHandler.GetComponent<Rigidbody>();
-            temporaryRigidbody.AddForce(transform.forward * 30);
+            temporaryRigidbody.AddForce(transform.forward * BulletForwardForce);
             Destroy(TemporaryBulletHandler, 5.0f);
+        }
+        else if (Input.GetKeyUp(KeyCode.E))
+        {
+            anim.SetBool("attakr", false);
         }
         if (Input.GetKey(KeyCode.T))
         {
             anim.SetBool("attakr", true);
         }
-        if (Input.GetKeyUp(KeyCode.T))
+        if (Input.GetKeyUp(KeyCode.T) && PlayerManager.instance.player.GetComponent<PlayerStats>().Level >= 3)
         {
             anim.SetBool("attakr", false);
             GameObject TemporaryBulletHandler;
@@ -125,8 +135,12 @@ public class PlayerController : MonoBehaviour
             //TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);
             Rigidbody temporaryRigidbody;
             temporaryRigidbody = TemporaryBulletHandler.GetComponent<Rigidbody>();
-            temporaryRigidbody.AddForce(transform.forward * 30);
+            temporaryRigidbody.AddForce(transform.forward * BulletForwardForce);
             Destroy(TemporaryBulletHandler, 5.0f);
+        }
+        else if (Input.GetKeyUp(KeyCode.T))
+        {
+            anim.SetBool("attakr", false);
         }
         if (Input.GetKey(KeyCode.R))
         {

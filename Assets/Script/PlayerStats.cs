@@ -21,6 +21,8 @@ public class PlayerStats : MonoBehaviour
     public Button buyArmour;
     public GameObject GameOverUI;
     public Text LevelUI;
+    public Text NewLevelText;
+    public GameObject NewLevelUI;
     #endregion
 
     #region player stats variables
@@ -34,11 +36,13 @@ public class PlayerStats : MonoBehaviour
     public int armourPrice = 100;
     public float damageProtection = 1.0f;
     public int amountOfHealthPotion = 0;
-    public bool redDiamondVisibility = false;
-    public bool redDiamondVisibilityLevel1 = false;
+
+    private float timeToStopHealling = 0f;
 
     public int NumOfKills = 0;
     public int NumOfFoundDiamonds = 0;
+
+    public ParticleSystem Healling;
     #endregion
 
     // Start is called before the first frame update
@@ -98,6 +102,11 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Time.time - timeToStopHealling > 1)
+        {
+            Healling.Stop();
+        }
+
 
         if(Input.GetKeyDown(KeyCode.L))
         {
@@ -120,6 +129,27 @@ public class PlayerStats : MonoBehaviour
             else
             {
                 PauseInventory();
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            if (amountOfHealthPotion > 0)
+            {
+                Healling.Play();
+                if (CurrentHealth + 50 >= MaxHealth)
+                {
+                    CurrentHealth = MaxHealth;
+                }
+                else
+                {
+                    CurrentHealth += 50;
+                }
+                amountOfHealthPotion -= 1;
+                healthBar.SetHealth(CurrentHealth);
+                potionsAmount.text = amountOfHealthPotion.ToString();
+                potionAmountInventory.text = amountOfHealthPotion.ToString();
+                timeToStopHealling = Time.time;
             }
         }
     }
@@ -155,13 +185,13 @@ public class PlayerStats : MonoBehaviour
 
         if (collision.gameObject.CompareTag("fireBall"))
         {
-            TakeDamage(20.0f);
+            TakeDamage(30.0f);
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("iceBall"))
         {
-            TakeDamage(20.0f);
+            TakeDamage(30.0f);
             Destroy(collision.gameObject);
         }
 
@@ -175,8 +205,37 @@ public class PlayerStats : MonoBehaviour
             TakeDamage(10.0f);
         }
 
-        if (collision.gameObject.CompareTag("findRedDiamond"))
+        if (collision.gameObject.CompareTag("sword"))
         {
+            TakeDamage(30.0f);
+        }
+
+        if (collision.gameObject.CompareTag("diamond"))
+        {
+            if(Level == 1)
+            {
+                collision.gameObject.SetActive(false);
+                collision.gameObject.transform.position = new Vector3(2690.2f, 106.5f, 836f);
+                collision.gameObject.SetActive(true);
+            }
+            if (Level == 2)
+            {
+                collision.gameObject.SetActive(false);
+                collision.gameObject.transform.position = new Vector3(2647.3f, 106.5f, 835.76f);
+                collision.gameObject.SetActive(true);
+            }
+            if (Level == 3)
+            {
+                collision.gameObject.SetActive(false);
+                collision.gameObject.transform.position = new Vector3(2647.3f, 106.5f, 791.33f);
+                collision.gameObject.SetActive(true);
+            }
+            if (Level == 4)
+            {
+                collision.gameObject.SetActive(false);
+                collision.gameObject.transform.position = new Vector3(2690.1f, 106.5f, 792.76f);
+                collision.gameObject.SetActive(true);
+            }
             Level += 1;
             LevelUI.text = Level.ToString();
             Money += 300;
@@ -185,20 +244,17 @@ public class PlayerStats : MonoBehaviour
             healthBar.SetMaxHealth(MaxHealth);
             healthBar.SetHealth(CurrentHealth);
             moneyInShop.text = Money.ToString();
+            NumOfFoundDiamonds++;
             SetMoneyText();
             if (damageProtection > 0.4)
                 damageProtection -= 0.1f;
-            redDiamondVisibilityLevel1 = false;
-            redDiamondVisibility = true;
-            collision.gameObject.SetActive(redDiamondVisibilityLevel1);
-            Destroy(collision.gameObject);
-            for (int i = 0; i < GameObject.FindGameObjectsWithTag("redDiamond").Length; i++)
-                GameObject.FindGameObjectsWithTag("redDiamond")[i].SetActive(redDiamondVisibility);
-        }
 
-        if (collision.gameObject.CompareTag("sword"))
-        {
-            TakeDamage(30.0f);
+            if (NumOfFoundDiamonds < 4)
+                NewLevelText.text = $"You have reached level {Level}.\nYou have to find {4 - NumOfFoundDiamonds} more diamonds to save our lands.\n Keep going, we believe in you!!!";
+            else
+                NewLevelText.text = $"You found all of the stolen diamonds.\nOur land is safe now.";
+            NewLevelUI.SetActive(true);
+            PlayerManager.instance.player.transform.position = new Vector3(2666.1f, 103f, 766.7f);
         }
     }
 
@@ -219,8 +275,6 @@ public class PlayerStats : MonoBehaviour
         armourPrice = data.ArmourPrice;
         damageProtection = data.DamageProtection;
         amountOfHealthPotion = data.AmountOfHealthPotion;
-        redDiamondVisibility = data.RedDiamondVisibility;
-        redDiamondVisibilityLevel1 = data.RedDiamondVisibilityLevel1;
         NumOfKills = data.NumOfKills;
         NumOfFoundDiamonds = data.NumOfFoundDiamonds;
         Vector3 position;
@@ -295,7 +349,6 @@ public class PlayerStats : MonoBehaviour
     }
 
     #endregion
-
 
     #region Open and close shop, inventory
 

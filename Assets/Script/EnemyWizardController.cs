@@ -94,6 +94,7 @@ public class EnemyWizardController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("spell"))
         {
+            Destroy(collision.gameObject);
             HP = HP - 10;
             Damage.Play();
             animator.Play("Base Layer.damage_001");

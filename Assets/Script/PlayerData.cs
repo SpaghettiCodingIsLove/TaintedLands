@@ -12,8 +12,6 @@ public class PlayerData
     public float CurrentHealth;
     public float DamageProtection;
     public int AmountOfHealthPotion;
-    public bool RedDiamondVisibility = false;
-    public bool RedDiamondVisibilityLevel1 = false;
     public float[] Position;
     public int NumOfKills;
     public int NumOfFoundDiamonds;
@@ -27,8 +25,6 @@ public class PlayerData
         DamageProtection = player.damageProtection;
         AmountOfHealthPotion = player.amountOfHealthPotion;
         CurrentHealth = player.CurrentHealth;
-        RedDiamondVisibility = player.redDiamondVisibility;
-        RedDiamondVisibilityLevel1 = player.redDiamondVisibilityLevel1;
         NumOfKills = player.NumOfKills;
         NumOfFoundDiamonds = player.NumOfFoundDiamonds;
         Position = new float[3];
