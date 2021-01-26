@@ -16809,6 +16809,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 20
+  HP: 100
   Damage: {fileID: 198000011265403402}
   Attack: {fileID: 198000010413749280}
   Bullet_Emitter1: {fileID: 4586130118954669634}

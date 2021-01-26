@@ -23,6 +23,10 @@ public class PlayerStats : MonoBehaviour
     public Text LevelUI;
     public Text NewLevelText;
     public GameObject NewLevelUI;
+    public GameObject FinalBoss;
+    public GameObject GameEndingPanel;
+    public Button StartGame;
+    public GameObject GameStartingPanel;
     #endregion
 
     #region player stats variables
@@ -48,6 +52,10 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        StartGame.onClick.AddListener(delegate () {
+            GameStartingPanel.SetActive(false);
+        });
+
         Debug.Log("START " + SaveSystem.doLoadFromFile.ToString());
         if(SaveSystem.doLoadFromFile == true)
         {
@@ -58,6 +66,7 @@ public class PlayerStats : MonoBehaviour
         }
         else
         {
+            GameStartingPanel.SetActive(true);
             MaxHealth = MaxHealth * Level;
             CurrentHealth = MaxHealth;
             Level = 1;
@@ -102,7 +111,13 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time - timeToStopHealling > 1)
+        if(SaveSystem.isFinallBossDead == true)
+        {
+            GameEndingPanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
+
+        if (Time.time - timeToStopHealling > 1)
         {
             Healling.Stop();
         }
@@ -210,6 +225,11 @@ public class PlayerStats : MonoBehaviour
             TakeDamage(30.0f);
         }
 
+        if (collision.gameObject.CompareTag("wizard"))
+        {
+            TakeDamage(30.0f);
+        }
+
         if (collision.gameObject.CompareTag("diamond"))
         {
             if(Level == 1)
@@ -252,9 +272,22 @@ public class PlayerStats : MonoBehaviour
             if (NumOfFoundDiamonds < 4)
                 NewLevelText.text = $"You have reached level {Level}.\nYou have to find {4 - NumOfFoundDiamonds} more diamonds to save our lands.\n Keep going, we believe in you!!!";
             else
-                NewLevelText.text = $"You found all of the stolen diamonds.\nOur land is safe now.";
+                NewLevelText.text = $"You found all of the stolen diamonds.\nNow you'll have to fight your last battle.";
             NewLevelUI.SetActive(true);
-            PlayerManager.instance.player.transform.position = new Vector3(2666.1f, 103f, 766.7f);
+            if(NumOfFoundDiamonds < 4)
+            {
+                PlayerManager.instance.player.SetActive(false);
+                PlayerManager.instance.player.transform.position = new Vector3(2666.1f, 103f, 766.7f);
+                PlayerManager.instance.player.SetActive(true);
+            }
+            else
+            {
+                PlayerManager.instance.player.SetActive(false);
+                PlayerManager.instance.player.transform.position = new Vector3(900.9f, 133f, 1060f);
+                PlayerManager.instance.player.SetActive(true);
+                //Instantiate(FinalBoss,new Vector3(906.7f, 133f, 988f), transform.rotation);
+            }
+            
         }
     }
 

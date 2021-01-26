@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SkeletonAddingController : MonoBehaviour
 {
@@ -14,10 +15,33 @@ public class SkeletonAddingController : MonoBehaviour
     public Text YPositionText;
     public Text ZPositionText;
 
+    
+    public Button FastTravellToVillage;
+    public Button FastTravellToVillage2;
+    public Button GoToMenuAfterEnding;
+    
     Transform target;
     // Start is called before the first frame update
     void Start()
     {
+
+        FastTravellToVillage.onClick.AddListener(delegate () {
+            PlayerManager.instance.player.SetActive(false);
+            PlayerManager.instance.player.transform.position = new Vector3(829.6f, 160f, 2807.6f);
+            PlayerManager.instance.player.SetActive(true);
+        });
+
+        FastTravellToVillage2.onClick.AddListener(delegate () {
+            PlayerManager.instance.player.SetActive(false);
+            PlayerManager.instance.player.transform.position = new Vector3(2666.1f, 160f, 766.7f);
+            PlayerManager.instance.player.SetActive(true);
+        });
+
+        GoToMenuAfterEnding.onClick.AddListener(delegate ()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        });
+
         target = PlayerManager.instance.player.transform;
 
         XPositionText.text = target.position.x.ToString();

@@ -5,6 +5,7 @@ using System.Runtime.Serialization.Formatters.Binary;
 public static class SaveSystem
 {
     public static bool doLoadFromFile = false;
+    public static bool isFinallBossDead = false;
 
     public static void SavePlayer(PlayerStats player)
     {

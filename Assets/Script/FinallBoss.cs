@@ -1,9 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
+using UnityEngine.UI;
 
-public class EnemyWizardController : MonoBehaviour
+public class FinallBoss : MonoBehaviour
 {
     public float lookRadius;
 
@@ -20,7 +20,7 @@ public class EnemyWizardController : MonoBehaviour
     public float BulletForwardForce;
 
     Transform target;
-    NavMeshAgent agent;
+    UnityEngine.AI.NavMeshAgent agent;
     private Animator animator;
     private float time;
 
@@ -28,7 +28,7 @@ public class EnemyWizardController : MonoBehaviour
     void Start()
     {
         target = PlayerManager.instance.player.transform;
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
         agent.Warp(transform.position);
         animator = GetComponent<Animator>();
         time = Time.time;
@@ -39,14 +39,15 @@ public class EnemyWizardController : MonoBehaviour
     {
         float distance = Vector3.Distance(target.position, transform.position);
 
-        if(isDead && Time.time - deadTime > 10)
+        if (isDead && Time.time - deadTime > 5)
         {
+            SaveSystem.isFinallBossDead = true;
             Destroy(gameObject);
         }
 
         if (distance <= lookRadius && !isDead)
         {
-            if(Time.time - time > 3f)
+            if (Time.time - time > 3f)
             {
                 FaceTarget();
                 animator.Play("Base Layer.idle_combat");
@@ -60,7 +61,7 @@ public class EnemyWizardController : MonoBehaviour
                     temporaryRigidbody = TemporaryBulletHandler.GetComponent<Rigidbody>();
                     temporaryRigidbody.AddForce(transform.forward * BulletForwardForce);
                     Destroy(TemporaryBulletHandler, distance);
-                    
+
                 }
                 else
                 {
@@ -78,7 +79,7 @@ public class EnemyWizardController : MonoBehaviour
 
             if (distance <= agent.stoppingDistance)
             {
-                if(Time.time - time > 1.5f)
+                if (Time.time - time > 1.5f)
                 {
                     animator.Play("Base Layer.idle_combat");
                     time = Time.time;
@@ -96,7 +97,7 @@ public class EnemyWizardController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             HP = HP - 10;
-            if (HP > 0)
+            if(HP > 0)
                 Damage.Play();
             animator.Play("Base Layer.damage_001");
             if (HP == 0)
