@@ -6,8 +6,8 @@ public class SkeletonAnimController : MonoBehaviour
 {
     public float lookRadius = 10f;
 
-    public float moveSpeed = 0.3f;
-    public float rotSpeed = 100f;
+    public float moveSpeed = 0.1f;
+    public float rotSpeed = 50f;
     private float time;
 
     private bool isWandering = false;

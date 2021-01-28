@@ -123,11 +123,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.T))
         {
-            anim.SetBool("attakr", true);
+            anim.SetBool("spell1", true);
         }
         if (Input.GetKeyUp(KeyCode.T) && PlayerManager.instance.player.GetComponent<PlayerStats>().Level >= 2 && anim.GetBool("weaponOut") == true)
         {
-            anim.SetBool("attakr", false);
+            anim.SetBool("spell1", false);
             GameObject TemporaryBulletHandler;
             TemporaryBulletHandler = Instantiate(MagicSpell2, SpellSpawner.transform.position, SpellSpawner.transform.rotation) as GameObject;
             //TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);

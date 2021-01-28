@@ -1188,5 +1188,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lookRadius: 10
-  moveSpeed: 0.3
-  rotSpeed: 100
+  moveSpeed: 0.1
+  rotSpeed: 50

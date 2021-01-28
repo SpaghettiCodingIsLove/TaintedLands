@@ -193,11 +193,7 @@ public class PlayerStats : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("sword"))
-        {
-            TakeDamage(30.0f);
-            Destroy(other.gameObject);
-        }
+      
         if(other.gameObject.CompareTag("market"))
         {
             canOpenShop = true;
@@ -218,7 +214,7 @@ public class PlayerStats : MonoBehaviour
         if(collision.gameObject.CompareTag("sword"))
         {
             TakeDamage(30.0f);
-            Destroy(collision.gameObject);
+            //Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("bullet"))
