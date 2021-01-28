@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TestSpell : MonoBehaviour
 {
+    private float BulletForwardForce = 300f;
     public GameObject daggerBody;
     public GameObject daggerLeftHand;
     public GameObject daggerRightHand;
@@ -54,8 +55,16 @@ public class TestSpell : MonoBehaviour
 
     public void CastGeneric1()
     {
-        GameObject newSpell = Instantiate(particleGeneric1, positionGeneric1.transform.position, Quaternion.identity);
+        GameObject TemporaryBulletHandler;
+        TemporaryBulletHandler = Instantiate(particleGeneric1, positionGeneric1.transform.position, positionGeneric1.transform.rotation) as GameObject;
+        //TemporaryBulletHandler.transform.Rotate(Vector3.left * 90);
+        Rigidbody temporaryRigidbody;
+        temporaryRigidbody = TemporaryBulletHandler.GetComponent<Rigidbody>();
+        temporaryRigidbody.AddForce(transform.forward * BulletForwardForce);
+        Destroy(TemporaryBulletHandler, 2.0f);
+
+        /*GameObject newSpell = Instantiate(particleGeneric1, positionGeneric1.transform.position, Quaternion.identity);
         newSpell.transform.eulerAngles = new Vector3(0, transform.eulerAngles.y, 0);
-        Destroy(newSpell, 5.0f);
+        Destroy(newSpell, 5.0f);*/
     }
 }

@@ -5,9 +5,7 @@ using UnityEngine;
 public class WeaponOut : MonoBehaviour
 {
     GameObject sword;
-    string Animation1 = "GrabWeaponR";
-    string Animation2 = "PutAwayWeaponR";
-    Animator anim;
+
     
     
 

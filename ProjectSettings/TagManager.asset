@@ -17,6 +17,7 @@ TagManager:
   - wizard
   - spell
   - diamond
+  - ground
   layers:
   - Default
   - TransparentFX

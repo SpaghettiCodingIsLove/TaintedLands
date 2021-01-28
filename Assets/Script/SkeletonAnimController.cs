@@ -123,6 +123,8 @@ public class SkeletonAnimController : MonoBehaviour
         {
             PlayerManager.instance.player.GetComponent<PlayerStats>().AddMoney(10);
             PlayerManager.instance.player.GetComponent<PlayerStats>().NumOfKills++;
+            PlayerManager.instance.player.GetComponent<PlayerStats>().currentExp += 10;
+
             Destroy(this.gameObject);
         }
     }

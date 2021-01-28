@@ -1936,14 +1936,14 @@ ModelImporter:
         messageOptions: 0
       - time: 0.79082566
         functionName: PlayAudio
-        data: Footsteps
+        data: Footsteps Wood
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.79082566
         functionName: PlayAudio
-        data: Footsteps Gravel
+        data: Footsteps
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
@@ -1957,7 +1957,7 @@ ModelImporter:
         messageOptions: 0
       - time: 0.29908258
         functionName: PlayAudio
-        data: Footsteps
+        data: Footsteps Wood
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
@@ -3186,21 +3186,21 @@ ModelImporter:
       events:
       - time: 0.26789004
         functionName: PlayAudio
-        data: Footsteps
+        data: Footsteps Wood
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.26789004
         functionName: PlayAudio
-        data: Wet Footsteps 2
+        data: Footsteps Wood
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0
         messageOptions: 0
       - time: 0.7082568
         functionName: PlayAudio
-        data: Wet Footsteps 2
+        data: Footsteps Wood
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 0

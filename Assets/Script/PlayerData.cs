@@ -6,6 +6,7 @@ using UnityEngine;
 public class PlayerData
 {
     public int Money;
+    public int currentExp;
     public int Level;
     public float MaxHealth;
     public int ArmourPrice;
@@ -18,6 +19,7 @@ public class PlayerData
 
     public PlayerData(PlayerStats player)
     {
+        currentExp = player.currentExp;
         Money = player.Money;
         Level = player.Level;
         MaxHealth = player.MaxHealth;
