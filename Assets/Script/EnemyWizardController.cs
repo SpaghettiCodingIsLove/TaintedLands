@@ -7,7 +7,7 @@ public class EnemyWizardController : MonoBehaviour
 {
     public float lookRadius;
 
-    public int HP = 30;
+    public int HP;
     private bool isDead = false;
     private float deadTime;
 
@@ -102,6 +102,7 @@ public class EnemyWizardController : MonoBehaviour
             if (HP == 0)
             {
                 PlayerManager.instance.player.GetComponent<PlayerStats>().AddMoney(250);
+                PlayerManager.instance.player.GetComponent<PlayerStats>().currentExp+=20;
                 isDead = true;
                 deadTime = Time.time;
                 animator.Play("Base Layer.dead");

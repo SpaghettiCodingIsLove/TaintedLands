@@ -3291,8 +3291,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 44, y: 0}
-  m_SizeDelta: {x: 30, y: 30}
+  m_AnchoredPosition: {x: 99, y: 0}
+  m_SizeDelta: {x: 100, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &250769257
 MonoBehaviour:
@@ -3314,10 +3314,10 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 346b8f649af0b4fc3bc05bf03232285d, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
@@ -21451,7 +21451,7 @@ MonoBehaviour:
   StartGame: {fileID: 1777197410}
   GameStartingPanel: {fileID: 63861464}
   expNeeded: 000000000a000000140000001e00000028000000320000003c00000046000000500000005a00000064000000
-  currentExp: 0
+  currentExp: 50
   Money: 100
   Level: 1
   CurrentHealth: 0
@@ -21460,7 +21460,7 @@ MonoBehaviour:
   damageProtection: 1
   amountOfHealthPotion: 0
   NumOfKills: 0
-  NumOfFoundDiamonds: 0
+  NumOfFoundDiamonds: 3
   Healling: {fileID: 1332217054}
 --- !u!114 &535774770
 MonoBehaviour:

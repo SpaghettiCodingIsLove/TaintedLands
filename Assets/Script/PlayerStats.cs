@@ -257,25 +257,25 @@ public class PlayerStats : MonoBehaviour
 
         if (collision.gameObject.CompareTag("diamond"))
         {
-            if(Level == 2)
+            if(Level == 1)
             {
                 collision.gameObject.SetActive(false);
                 collision.gameObject.transform.position = new Vector3(2690.2f, 106.5f, 836f);
                 collision.gameObject.SetActive(true);
             }
-            if (Level == 4)
+            if (Level == 2)
             {
                 collision.gameObject.SetActive(false);
                 collision.gameObject.transform.position = new Vector3(2647.3f, 106.5f, 835.76f);
                 collision.gameObject.SetActive(true);
             }
-            if (Level == 6)
+            if (Level == 3)
             {
                 collision.gameObject.SetActive(false);
                 collision.gameObject.transform.position = new Vector3(2647.3f, 106.5f, 791.33f);
                 collision.gameObject.SetActive(true);
             }
-            if (Level == 8)
+            if (Level == 4)
             {
                 collision.gameObject.SetActive(false);
                 collision.gameObject.transform.position = new Vector3(2690.1f, 106.5f, 792.76f);
