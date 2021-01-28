@@ -7,7 +7,7 @@ public class EnemyWizardController : MonoBehaviour
 {
     public float lookRadius;
 
-    public int HP;
+    public int HP = 30;
     private bool isDead = false;
     private float deadTime;
 

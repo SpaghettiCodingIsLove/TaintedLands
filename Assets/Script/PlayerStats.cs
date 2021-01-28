@@ -46,6 +46,7 @@ public class PlayerStats : MonoBehaviour
     private float timeToStopHealling = 0f;
 
     public int NumOfKills = 0;
+    [SerializeField]
     public int NumOfFoundDiamonds = 0;
 
     public ParticleSystem Healling;
