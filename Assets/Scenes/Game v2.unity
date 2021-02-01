@@ -1906,7 +1906,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1011319553682498, guid: 8ad137f6808375f4e885d60451f0c4fc, type: 3}
       propertyPath: m_TagString
-      value: diamond
+      value: blueDiamond
       objectReference: {fileID: 0}
     - target: {fileID: 4237741520885958, guid: 8ad137f6808375f4e885d60451f0c4fc, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6555,7 +6555,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1935905646489204, guid: 1435c36dca02dc841a30bfac19f79aa2, type: 3}
       propertyPath: m_TagString
-      value: diamond
+      value: redDiamond
       objectReference: {fileID: 0}
     - target: {fileID: 4992654313720208, guid: 1435c36dca02dc841a30bfac19f79aa2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8798,17 +8798,17 @@ PrefabInstance:
     - target: {fileID: 1031538201244916305, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2874.8
+      value: 2872.8
       objectReference: {fileID: 0}
     - target: {fileID: 1031538201244916305, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 98.3
+      value: 98.4
       objectReference: {fileID: 0}
     - target: {fileID: 1031538201244916305, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 930.7
+      value: 908.4
       objectReference: {fileID: 0}
     - target: {fileID: 1031538201244916305, guid: fd29e2d3f6e994629b646987c9d25c89,
         type: 3}
@@ -21450,8 +21450,12 @@ MonoBehaviour:
   GameEndingPanel: {fileID: 1672676481}
   StartGame: {fileID: 1777197410}
   GameStartingPanel: {fileID: 63861464}
+  RedDiamond: {fileID: 750126160}
+  YellowDiamond: {fileID: 215150292}
+  GreenDiamond: {fileID: 1743842689}
+  BlueDiamond: {fileID: 963879980}
   expNeeded: 000000000a000000140000001e00000028000000320000003c00000046000000500000005a00000064000000
-  currentExp: 50
+  currentExp: 0
   Money: 100
   Level: 1
   CurrentHealth: 0
@@ -21459,6 +21463,10 @@ MonoBehaviour:
   armourPrice: 100
   damageProtection: 1
   amountOfHealthPotion: 0
+  redDiamondFound: 0
+  greenDiamondFound: 0
+  yellowDiamondFound: 0
+  blueDiamondFound: 0
   NumOfKills: 0
   NumOfFoundDiamonds: 3
   Healling: {fileID: 1332217054}
@@ -26475,7 +26483,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1305964118088936, guid: 5f285e9508d4e3f4488b284bb80a0b9b, type: 3}
       propertyPath: m_TagString
-      value: diamond
+      value: yellowDiamond
       objectReference: {fileID: 0}
     - target: {fileID: 4981853204179252, guid: 5f285e9508d4e3f4488b284bb80a0b9b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33613,7 +33621,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1002098886002438, guid: df80741be051bc54c85258e839162dd4, type: 3}
       propertyPath: m_TagString
-      value: diamond
+      value: greenDiamond
       objectReference: {fileID: 0}
     - target: {fileID: 4608080024879778, guid: df80741be051bc54c85258e839162dd4, type: 3}
       propertyPath: m_LocalPosition.x

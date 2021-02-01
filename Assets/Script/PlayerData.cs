@@ -16,6 +16,11 @@ public class PlayerData
     public float[] Position;
     public int NumOfKills;
     public int NumOfFoundDiamonds;
+    public bool redDiamondFound;
+    public bool greenDiamondFound;
+    public bool yellowDiamondFound;
+    public bool blueDiamondFound;
+
 
     public PlayerData(PlayerStats player)
     {
@@ -33,6 +38,9 @@ public class PlayerData
         Position[0] = player.transform.position.x;
         Position[1] = player.transform.position.y;
         Position[2] = player.transform.position.z;
-
+        redDiamondFound = player.redDiamondFound;
+        blueDiamondFound = player.blueDiamondFound;
+        yellowDiamondFound = player.yellowDiamondFound;
+        blueDiamondFound = player.blueDiamondFound;
     }
 }

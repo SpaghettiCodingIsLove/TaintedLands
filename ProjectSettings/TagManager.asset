@@ -18,6 +18,10 @@ TagManager:
   - spell
   - diamond
   - ground
+  - greenDiamond
+  - yellowDiamond
+  - redDiamond
+  - blueDiamond
   layers:
   - Default
   - TransparentFX

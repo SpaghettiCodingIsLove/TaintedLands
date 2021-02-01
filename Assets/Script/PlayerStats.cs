@@ -27,6 +27,10 @@ public class PlayerStats : MonoBehaviour
     public GameObject GameEndingPanel;
     public Button StartGame;
     public GameObject GameStartingPanel;
+    public GameObject RedDiamond;
+    public GameObject YellowDiamond;
+    public GameObject GreenDiamond;
+    public GameObject BlueDiamond;
     #endregion
 
     #region player stats variables
@@ -42,6 +46,11 @@ public class PlayerStats : MonoBehaviour
     public int armourPrice = 100;
     public float damageProtection = 1.0f;
     public int amountOfHealthPotion = 0;
+    public bool redDiamondFound = false;
+    public bool greenDiamondFound = false;
+    public bool yellowDiamondFound = false;
+    public bool blueDiamondFound = false;
+
 
     private float timeToStopHealling = 0f;
 
@@ -74,6 +83,7 @@ public class PlayerStats : MonoBehaviour
             CurrentHealth = MaxHealth;
             Level = 1;
             Money = 100;
+            currentExp = 0;
         }
 
 
@@ -128,12 +138,10 @@ public class PlayerStats : MonoBehaviour
             if (damageProtection > 0.4)
                 damageProtection -= 0.1f;
 
-            if (NumOfFoundDiamonds < 4)
-                NewLevelText.text = $"You have reached level {Level}.\nYou have to find {4 - NumOfFoundDiamonds} more diamonds to save our lands.\n Keep going, we believe in you!!!";
-            else
-                NewLevelText.text = $"You found all of the stolen diamonds.\nNow you'll have to fight your last battle.";
+            NewLevelText.text = $"You have reached new level {Level}.";
             NewLevelUI.SetActive(true);
         }
+
         if(SaveSystem.isFinallBossDead == true)
         {
             GameEndingPanel.SetActive(true);
@@ -192,30 +200,12 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider other)
-    {
-      
-        if(other.gameObject.CompareTag("market"))
-        {
-            canOpenShop = true;
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.CompareTag("market"))
-        {
-            canOpenShop = false;
-        }
-    }
-
    
     void OnCollisionEnter(Collision collision)
     {
         if(collision.gameObject.CompareTag("sword"))
         {
             TakeDamage(30.0f);
-            //Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("bullet"))
@@ -255,64 +245,74 @@ public class PlayerStats : MonoBehaviour
             TakeDamage(30.0f);
         }
 
-        if (collision.gameObject.CompareTag("diamond"))
+        if (collision.gameObject.CompareTag("redDiamond"))
         {
-            if(Level == 1)
-            {
-                collision.gameObject.SetActive(false);
-                collision.gameObject.transform.position = new Vector3(2690.2f, 106.5f, 836f);
-                collision.gameObject.SetActive(true);
-            }
-            if (Level == 2)
-            {
-                collision.gameObject.SetActive(false);
-                collision.gameObject.transform.position = new Vector3(2647.3f, 106.5f, 835.76f);
-                collision.gameObject.SetActive(true);
-            }
-            if (Level == 3)
-            {
-                collision.gameObject.SetActive(false);
-                collision.gameObject.transform.position = new Vector3(2647.3f, 106.5f, 791.33f);
-                collision.gameObject.SetActive(true);
-            }
-            if (Level == 4)
-            {
-                collision.gameObject.SetActive(false);
-                collision.gameObject.transform.position = new Vector3(2690.1f, 106.5f, 792.76f);
-                collision.gameObject.SetActive(true);
-            }
-            Level += 1;
-            LevelUI.text = Level.ToString();
-            Money += 300;
-            MaxHealth += 100;
-            CurrentHealth = MaxHealth;
-            healthBar.SetMaxHealth(MaxHealth);
-            healthBar.SetHealth(CurrentHealth);
-            moneyInShop.text = Money.ToString();
-            NumOfFoundDiamonds++;
-            SetMoneyText();
-            if (damageProtection > 0.4)
-                damageProtection -= 0.1f;
+            collision.gameObject.SetActive(false);
+            collision.gameObject.transform.position = new Vector3(2690.2f, 106.5f, 836f);
+            collision.gameObject.SetActive(true);
+            redDiamondFound = true;
+            diamondWasFound();
+        }
 
-            if (NumOfFoundDiamonds < 4)
-                NewLevelText.text = $"You have reached level {Level}.\nYou have to find {4 - NumOfFoundDiamonds} more diamonds to save our lands.\n Keep going, we believe in you!!!";
-            else
-                NewLevelText.text = $"You found all of the stolen diamonds.\nNow you'll have to fight your last battle.";
-            NewLevelUI.SetActive(true);
-            if(NumOfFoundDiamonds < 4)
-            {
-                PlayerManager.instance.player.SetActive(false);
-                PlayerManager.instance.player.transform.position = new Vector3(2666.1f, 103f, 766.7f);
-                PlayerManager.instance.player.SetActive(true);
-            }
-            else
-            {
-                PlayerManager.instance.player.SetActive(false);
-                PlayerManager.instance.player.transform.position = new Vector3(900.9f, 133f, 1060f);
-                PlayerManager.instance.player.SetActive(true);
-                //Instantiate(FinalBoss,new Vector3(906.7f, 133f, 988f), transform.rotation);
-            }
-            
+        if (collision.gameObject.CompareTag("blueDiamond"))
+        {
+            collision.gameObject.SetActive(false);
+            collision.gameObject.transform.position = new Vector3(2647.3f, 106.5f, 835.76f);
+            collision.gameObject.SetActive(true);
+            redDiamondFound = true;
+            diamondWasFound();
+        }
+
+        if (collision.gameObject.CompareTag("yellowDiamond"))
+        {
+            collision.gameObject.SetActive(false);
+            collision.gameObject.transform.position = new Vector3(2647.3f, 106.5f, 791.33f);
+            collision.gameObject.SetActive(true);
+            redDiamondFound = true;
+            diamondWasFound();
+        }
+
+        if (collision.gameObject.CompareTag("greenDiamond"))
+        {
+            collision.gameObject.SetActive(false);
+            collision.gameObject.transform.position = new Vector3(2690.1f, 106.5f, 792.76f);
+            collision.gameObject.SetActive(true);
+            redDiamondFound = true;
+            diamondWasFound();
+        }
+    }
+
+    private void diamondWasFound()
+    {
+        Level += 1;
+        LevelUI.text = Level.ToString();
+        Money += 300;
+        MaxHealth += 100;
+        CurrentHealth = MaxHealth;
+        healthBar.SetMaxHealth(MaxHealth);
+        healthBar.SetHealth(CurrentHealth);
+        moneyInShop.text = Money.ToString();
+        NumOfFoundDiamonds++;
+        SetMoneyText();
+        if (damageProtection > 0.4)
+            damageProtection -= 0.1f;
+
+        if (NumOfFoundDiamonds < 4)
+            NewLevelText.text = $"You have reached level {Level}.\nYou have to find {4 - NumOfFoundDiamonds} more diamonds to save our lands.\n Keep going, we believe in you!!!";
+        else
+            NewLevelText.text = $"You found all of the stolen diamonds.\nNow you'll have to fight your last battle.";
+        NewLevelUI.SetActive(true);
+        if (NumOfFoundDiamonds < 4)
+        {
+            PlayerManager.instance.player.SetActive(false);
+            PlayerManager.instance.player.transform.position = new Vector3(2666.1f, 103f, 766.7f);
+            PlayerManager.instance.player.SetActive(true);
+        }
+        else
+        {
+            PlayerManager.instance.player.SetActive(false);
+            PlayerManager.instance.player.transform.position = new Vector3(900.9f, 133f, 1060f);
+            PlayerManager.instance.player.SetActive(true);
         }
     }
 
@@ -336,10 +336,42 @@ public class PlayerStats : MonoBehaviour
         NumOfKills = data.NumOfKills;
         NumOfFoundDiamonds = data.NumOfFoundDiamonds;
         Vector3 position;
+        redDiamondFound = data.redDiamondFound;
+        blueDiamondFound = data.blueDiamondFound;
+        yellowDiamondFound = data.yellowDiamondFound;
+        greenDiamondFound = data.greenDiamondFound;
         position.x = data.Position[0];
         position.y = data.Position[1];
         position.z = data.Position[2];
         transform.position = position;
+
+        if(redDiamondFound)
+        {
+            RedDiamond.SetActive(false);
+            RedDiamond.transform.position = new Vector3(2690.2f, 106.5f, 836f);
+            RedDiamond.SetActive(true);
+        }
+
+        if(blueDiamondFound)
+        {
+            BlueDiamond.SetActive(false);
+            BlueDiamond.transform.position = new Vector3(2647.3f, 106.5f, 835.76f);
+            BlueDiamond.SetActive(true);
+        }
+
+        if(yellowDiamondFound)
+        {
+            YellowDiamond.SetActive(false);
+            YellowDiamond.transform.position = new Vector3(2647.3f, 106.5f, 791.33f);
+            YellowDiamond.SetActive(true);
+        }
+
+        if(greenDiamondFound)
+        {
+            GreenDiamond.SetActive(false);
+            GreenDiamond.transform.position = new Vector3(2690.1f, 106.5f, 792.76f);
+            GreenDiamond.SetActive(true);
+        }
     }
 
     public void LoadPlayerAfterDeath()
