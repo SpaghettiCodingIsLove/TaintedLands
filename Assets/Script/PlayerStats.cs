@@ -245,6 +245,11 @@ public class PlayerStats : MonoBehaviour
             TakeDamage(30.0f);
         }
 
+        if (collision.gameObject.CompareTag("tiger") || collision.gameObject.CompareTag("spider"))
+        {
+            TakeDamage(10.0f);
+        }
+
         if (collision.gameObject.CompareTag("redDiamond"))
         {
             collision.gameObject.SetActive(false);

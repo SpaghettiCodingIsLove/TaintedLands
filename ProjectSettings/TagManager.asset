@@ -22,6 +22,8 @@ TagManager:
   - yellowDiamond
   - redDiamond
   - blueDiamond
+  - tiger
+  - spider
   layers:
   - Default
   - TransparentFX

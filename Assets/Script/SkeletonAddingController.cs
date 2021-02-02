@@ -15,6 +15,8 @@ public class SkeletonAddingController : MonoBehaviour
     public Text YPositionText;
     public Text ZPositionText;
 
+    public GameObject tiger;
+    public GameObject spider;
     
     public Button FastTravellToVillage;
     public Button FastTravellToVillage2;
@@ -48,34 +50,54 @@ public class SkeletonAddingController : MonoBehaviour
         YPositionText.text = target.position.y.ToString();
         ZPositionText.text = target.position.z.ToString();
 
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 75; i++)
         {
             CreateSkeletonMonster();
         }
 
-        for (int i = 0; i < 50; i++)
+        for (int i = 0; i < 75; i++)
         {
             CreateSkeletonMonster2();
         }
 
-        for (int i = 0; i < 25; i++)
+        for (int i = 0; i < 50; i++)
         {
             CreateMaleCitizen();
         }
 
-        for(int i = 0; i < 25; i++)
+        for(int i = 0; i < 50; i++)
         {
             CreateFemaleCitizen();
         }
 
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 30; i++)
         {
             CreateMaleCitizen2();
         }
 
-        for (int i = 0; i < 20; i++)
+        for (int i = 0; i < 30; i++)
         {
             CreateFemaleCitizen2();
+        }
+
+        for(int i=0; i < 150; i++)
+        {
+            CreateTiger();
+        }
+
+        for (int i = 0; i < 150; i++)
+        {
+            CreateTiger2();
+        }
+
+        for (int i = 0; i < 30; i++)
+        {
+            CreateSpider();
+        }
+
+        for (int i = 0; i < 30; i++)
+        {
+            CreateSpider2();
         }
     }
 
@@ -120,5 +142,29 @@ public class SkeletonAddingController : MonoBehaviour
     {
         Vector3 vector = new Vector3(Random.Range(835.0f, 1003.0f), 136.0f, Random.Range(2728.0f, 2874.0f));
         Instantiate(female, vector, female.transform.rotation);
+    }
+
+    void CreateTiger()
+    {
+        Vector3 vector = new Vector3(Random.Range(767.0f, 2377.0f), 136.0f, Random.Range(1022.0f, 3103.0f));
+        Instantiate(tiger, vector, tiger.transform.rotation);
+    }
+
+    void CreateTiger2()
+    {
+        Vector3 vector = new Vector3(Random.Range(2726.0f, 3493.0f), 136.0f, Random.Range(1265.0f, 2755.0f));
+        Instantiate(tiger, vector, tiger.transform.rotation);
+    }
+
+    void CreateSpider()
+    {
+        Vector3 vector = new Vector3(Random.Range(767.0f, 2377.0f), 136.0f, Random.Range(1022.0f, 3103.0f));
+        Instantiate(spider, vector, spider.transform.rotation);
+    }
+
+    void CreateSpider2()
+    {
+        Vector3 vector = new Vector3(Random.Range(2726.0f, 3493.0f), 136.0f, Random.Range(1265.0f, 2755.0f));
+        Instantiate(spider, vector, spider.transform.rotation);
     }
 }

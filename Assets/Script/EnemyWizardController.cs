@@ -97,8 +97,10 @@ public class EnemyWizardController : MonoBehaviour
             Destroy(collision.gameObject);
             HP = HP - 10;
             if (HP > 0)
+            {
                 Damage.Play();
-            animator.Play("Base Layer.damage_001");
+                animator.Play("Base Layer.damage_001");
+            }
             if (HP == 0)
             {
                 PlayerManager.instance.player.GetComponent<PlayerStats>().AddMoney(250);
