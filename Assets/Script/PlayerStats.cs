@@ -256,6 +256,7 @@ public class PlayerStats : MonoBehaviour
             collision.gameObject.transform.position = new Vector3(2690.2f, 106.5f, 836f);
             collision.gameObject.SetActive(true);
             redDiamondFound = true;
+            NumOfFoundDiamonds++;
             diamondWasFound();
         }
 
@@ -264,7 +265,8 @@ public class PlayerStats : MonoBehaviour
             collision.gameObject.SetActive(false);
             collision.gameObject.transform.position = new Vector3(2647.3f, 106.5f, 835.76f);
             collision.gameObject.SetActive(true);
-            redDiamondFound = true;
+            blueDiamondFound = true;
+            NumOfFoundDiamonds++;
             diamondWasFound();
         }
 
@@ -273,7 +275,8 @@ public class PlayerStats : MonoBehaviour
             collision.gameObject.SetActive(false);
             collision.gameObject.transform.position = new Vector3(2647.3f, 106.5f, 791.33f);
             collision.gameObject.SetActive(true);
-            redDiamondFound = true;
+            yellowDiamondFound = true;
+            NumOfFoundDiamonds++;
             diamondWasFound();
         }
 
@@ -282,7 +285,8 @@ public class PlayerStats : MonoBehaviour
             collision.gameObject.SetActive(false);
             collision.gameObject.transform.position = new Vector3(2690.1f, 106.5f, 792.76f);
             collision.gameObject.SetActive(true);
-            redDiamondFound = true;
+            greenDiamondFound = true;
+            NumOfFoundDiamonds++;
             diamondWasFound();
         }
     }
@@ -297,7 +301,6 @@ public class PlayerStats : MonoBehaviour
         healthBar.SetMaxHealth(MaxHealth);
         healthBar.SetHealth(CurrentHealth);
         moneyInShop.text = Money.ToString();
-        NumOfFoundDiamonds++;
         SetMoneyText();
         if (damageProtection > 0.4)
             damageProtection -= 0.1f;
@@ -350,7 +353,7 @@ public class PlayerStats : MonoBehaviour
         position.z = data.Position[2];
         transform.position = position;
 
-        if(redDiamondFound)
+        if (redDiamondFound)
         {
             RedDiamond.SetActive(false);
             RedDiamond.transform.position = new Vector3(2690.2f, 106.5f, 836f);

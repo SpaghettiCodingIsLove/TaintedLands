@@ -41,6 +41,6 @@ public class PlayerData
         redDiamondFound = player.redDiamondFound;
         blueDiamondFound = player.blueDiamondFound;
         yellowDiamondFound = player.yellowDiamondFound;
-        blueDiamondFound = player.blueDiamondFound;
+        greenDiamondFound = player.greenDiamondFound;
     }
 }

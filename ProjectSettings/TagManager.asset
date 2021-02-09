@@ -24,6 +24,7 @@ TagManager:
   - blueDiamond
   - tiger
   - spider
+  - wall
   layers:
   - Default
   - TransparentFX
