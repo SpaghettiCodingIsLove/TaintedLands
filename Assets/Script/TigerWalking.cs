@@ -15,7 +15,12 @@ public class TigerWalking : MonoBehaviour
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
     private bool isWalking = false;
-
+    private bool isAttacking = false;
+    AudioSource audio;
+    [SerializeField]
+    public AudioClip hit;
+    [SerializeField]
+    public AudioClip snarl;
     private int HP = 2;
 
     NavMeshAgent agent;
@@ -30,6 +35,7 @@ public class TigerWalking : MonoBehaviour
         target = PlayerManager.instance.player.transform;
         animator = GetComponent<Animator>();
         time = Time.time;
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -42,12 +48,15 @@ public class TigerWalking : MonoBehaviour
             FaceTarget();
             agent.SetDestination(target.position);
             animator.Play("Base Layer.run");
+            
         }
         else if(distance <= 2.0f)
         {
+            
             animator.enabled = false;
             agent.ResetPath();
             animator.Play("Base Layer.hit");
+            audio.PlayOneShot(snarl);
             /*if (Time.time - time > 1.5f)
             {
                 animator.Play("Base Layer.hit");
@@ -82,9 +91,11 @@ public class TigerWalking : MonoBehaviour
         {
             HP -= 1;
             Destroy(collision.gameObject);
-            if(HP == 0)
+            audio.PlayOneShot(hit);
+            if (HP == 0)
             {
                 Destroy(gameObject);
+                PlayerManager.instance.player.GetComponent<PlayerStats>().currentExp += 1;
             }
         }
     }
@@ -125,4 +136,6 @@ public class TigerWalking : MonoBehaviour
         Quaternion lookRotation = Quaternion.LookRotation(new Vector3(direction.x, 0f, direction.z));
         transform.rotation = Quaternion.Slerp(transform.rotation, lookRotation, Time.deltaTime * 5f);
     }
+
+    
 }

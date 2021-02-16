@@ -15,13 +15,18 @@ public class spiderController : MonoBehaviour
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
     private bool isWalking = false;
-
+    private bool isAttacking = false;
     private bool isDead = false;
 
     private int HP = 2;
 
     NavMeshAgent agent;
     Transform target;
+    AudioSource audio;
+    [SerializeField]
+    public AudioClip hit;
+    [SerializeField]
+    public AudioClip snarl;
 
     private Animator animator;
     // Start is called before the first frame update
@@ -32,6 +37,7 @@ public class spiderController : MonoBehaviour
         target = PlayerManager.instance.player.transform;
         animator = GetComponent<Animator>();
         time = Time.time;
+        audio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -49,12 +55,14 @@ public class spiderController : MonoBehaviour
             FaceTarget();
             agent.SetDestination(target.position);
             animator.Play("Base Layer.walk");
+            
         }
         else if (distance <= 2.0f && !isDead)
         {
             animator.enabled = false;
             agent.ResetPath();
             animator.Play("Base Layer.attack");
+            audio.PlayOneShot(snarl);
         }
         else
         {
@@ -84,11 +92,13 @@ public class spiderController : MonoBehaviour
         {
             HP -= 1;
             Destroy(collision.gameObject);
+            audio.PlayOneShot(hit);
             if (HP == 0)
             {
                 isDead = true;
                 time = Time.time;
                 animator.Play("die");
+                PlayerManager.instance.player.GetComponent<PlayerStats>().currentExp += 1;
             }
         }
     }

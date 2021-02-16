@@ -11,12 +11,14 @@ public class CitizensMoving : MonoBehaviour
     private bool isRotatingLeft = false;
     private bool isRotatingRight = false;
     private bool isWalking = false;
+    private AudioSource test;
 
     private Animator animator;
     // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
+        test = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -38,6 +40,14 @@ public class CitizensMoving : MonoBehaviour
         {
             transform.position += transform.forward * moveSpeed;
             animator.SetBool("Walking", isWalking);
+        }
+    }
+
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            test.Play();
         }
     }
 

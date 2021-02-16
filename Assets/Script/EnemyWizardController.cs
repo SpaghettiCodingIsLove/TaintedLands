@@ -23,6 +23,7 @@ public class EnemyWizardController : MonoBehaviour
     NavMeshAgent agent;
     private Animator animator;
     private float time;
+    AudioSource test;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class EnemyWizardController : MonoBehaviour
         agent.Warp(transform.position);
         animator = GetComponent<Animator>();
         time = Time.time;
+        test = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -100,6 +102,8 @@ public class EnemyWizardController : MonoBehaviour
             {
                 Damage.Play();
                 animator.Play("Base Layer.damage_001");
+                test.Play();
+                
             }
             if (HP == 0)
             {

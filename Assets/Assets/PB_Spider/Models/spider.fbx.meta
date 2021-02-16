@@ -375,7 +375,12 @@ ModelImporter:
   - first:
       137: 13700000
     second: mesh
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: spider_mat
+    second: {fileID: 2100000, guid: f73b6edfb0e1747debb82666f9db7597, type: 2}
   materials:
     materialImportMode: 1
     materialName: 1
@@ -415,7 +420,7 @@ ModelImporter:
       cycleOffset: 0
       loop: 0
       hasAdditiveReferencePose: 0
-      loopTime: 1
+      loopTime: 0
       loopBlend: 0
       loopBlendOrientation: 0
       loopBlendPositionY: 0
@@ -547,7 +552,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 1
     - serializedVersion: 16
       name: walk
       takeName: walk

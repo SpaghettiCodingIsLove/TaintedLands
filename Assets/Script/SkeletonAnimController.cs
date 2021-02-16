@@ -55,7 +55,7 @@ public class SkeletonAnimController : MonoBehaviour
             animator.SetBool("Walking", false);
             animator.SetBool("Attack", true);
             time = Time.time;
-            Debug.Log("Szkieletor powinien zaatakować");
+            //Debug.Log("Szkieletor powinien zaatakować");
         }
         else
         {

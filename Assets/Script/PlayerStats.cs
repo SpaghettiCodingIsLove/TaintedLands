@@ -31,6 +31,7 @@ public class PlayerStats : MonoBehaviour
     public GameObject YellowDiamond;
     public GameObject GreenDiamond;
     public GameObject BlueDiamond;
+    public AudioSource test;
     #endregion
 
     #region player stats variables
@@ -64,17 +65,18 @@ public class PlayerStats : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        test.GetComponent<AudioSource>();
         StartGame.onClick.AddListener(delegate () {
             GameStartingPanel.SetActive(false);
         });
 
-        Debug.Log("START " + SaveSystem.doLoadFromFile.ToString());
+        //Debug.Log("START " + SaveSystem.doLoadFromFile.ToString());
         if(SaveSystem.doLoadFromFile == true)
         {
-            Debug.Log("ODCZYT");
+            //Debug.Log("ODCZYT");
             LoadPLayer();
             SaveSystem.doLoadFromFile = false;
-            Debug.Log("START " + SaveSystem.doLoadFromFile.ToString());
+            //Debug.Log("START " + SaveSystem.doLoadFromFile.ToString());
         }
         else
         {
@@ -206,48 +208,57 @@ public class PlayerStats : MonoBehaviour
         if(collision.gameObject.CompareTag("sword"))
         {
             TakeDamage(30.0f);
+            test.Play();
         }
 
         if (collision.gameObject.CompareTag("bullet"))
         {
             TakeDamage(50.0f);
+            test.Play();
         }
 
         if (collision.gameObject.CompareTag("fireBall"))
         {
             TakeDamage(30.0f);
+            test.Play();
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("iceBall"))
         {
             TakeDamage(30.0f);
+            test.Play();
             Destroy(collision.gameObject);
         }
 
         if (collision.gameObject.CompareTag("skull"))
         {
             TakeDamage(20.0f);
+            test.Play();
         }
 
         if (collision.gameObject.CompareTag("skeletonmonster"))
         {
             TakeDamage(10.0f);
+            test.Play();
         }
 
         if (collision.gameObject.CompareTag("sword"))
         {
             TakeDamage(30.0f);
+            test.Play();
         }
 
         if (collision.gameObject.CompareTag("wizard"))
         {
             TakeDamage(30.0f);
+            test.Play();
         }
 
         if (collision.gameObject.CompareTag("tiger") || collision.gameObject.CompareTag("spider"))
         {
             TakeDamage(10.0f);
+            test.Play();
         }
 
         if (collision.gameObject.CompareTag("redDiamond"))
